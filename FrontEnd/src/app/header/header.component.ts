@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  right: boolean ;
+  constructor() {
+    this.right = false
+  }
 
+  ngOnInit(): void {
+    this.on();
+  }
+  on(){
+    this.right = true
+  }
 }
