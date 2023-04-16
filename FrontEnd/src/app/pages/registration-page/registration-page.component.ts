@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RegisterService } from '../register.service';
-import {nonAuthUser} from "../models";
+import { RegisterService } from '../../services/register/register.service';
+import {nonAuthUser} from "../../models";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({ templateUrl: 'registration-page.component.html' })

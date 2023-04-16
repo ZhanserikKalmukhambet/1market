@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { nonAuthUser } from './models';
+import { nonAuthUser } from '../../models';
 import {HttpClient} from "@angular/common/http";
 @Injectable({
   providedIn: 'root'

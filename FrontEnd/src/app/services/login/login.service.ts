@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {AuthToken} from "./models";
+import {AuthToken} from "../../models";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
