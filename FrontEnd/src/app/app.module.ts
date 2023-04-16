@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./AuthInterceptor";
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
 import { CategoriesNavComponent } from './components/categories-nav/categories-nav.component';
-import { HomePageComponent } from './pages/user-home-page/home-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 import { CategoriesSliderComponent } from './components/categories-slider/categories-slider.component';
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CategoriesSliderComponent } from './components/categories-slider/catego
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    SlickCarouselModule
   ],
 
   providers: [

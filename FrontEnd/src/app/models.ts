@@ -14,3 +14,4 @@ export interface nonAuthUser{
 export interface AuthToken {
   token: string;
 }
+

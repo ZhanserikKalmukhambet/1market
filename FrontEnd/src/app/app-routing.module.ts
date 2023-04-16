@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {RegistrationPageComponent} from "./pages/registration-page/registration-page.component";
-import {HomePageComponent} from "./pages/user-home-page/home-page.component";
+import {HomePageComponent} from "./pages/home-page/home-page.component";
+import {CategoriesSliderComponent} from "./components/categories-slider/categories-slider.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
   {path: 'registration', component: RegistrationPageComponent},
-  {path: 'shop', component: HomePageComponent}
+  {path: 'shop', component: HomePageComponent},
+  // {path: 'slider', component: CategoriesSliderComponent},
+
 ];
 
 @NgModule({
