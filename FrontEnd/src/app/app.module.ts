@@ -10,12 +10,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AuthInterceptor} from "./AuthInterceptor";
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
 import { CategoriesNavComponent } from './components/categories-nav/categories-nav.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { CategoriesSliderComponent } from './components/categories-slider/categories-slider.component';
+import { HomePageFooterComponent } from './components/home-page-footer/home-page-footer.component';
+import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,10 @@ import { CategoriesSliderComponent } from './components/categories-slider/catego
     RegistrationPageComponent,
     CategoriesNavComponent,
     HomePageComponent,
-    CategoriesSliderComponent
+    CategoriesSliderComponent,
+    HomePageFooterComponent,
+    CategoryDetailComponent,
+    ItemDetailComponent
   ],
 
   imports: [
@@ -33,7 +40,8 @@ import { CategoriesSliderComponent } from './components/categories-slider/catego
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    NgbModule
   ],
 
   providers: [
