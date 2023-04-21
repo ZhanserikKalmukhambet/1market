@@ -34,3 +34,12 @@ class Shop(models.Model):
     def __str__(self):
         return f'{self.name} - ({self.rating})'
 
+
+class WarehouseItem(models.Model):
+    product = models.ForeignKey(to='products.Product', on_delete=models.CASCADE)
+    shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    quantity = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.name}'
