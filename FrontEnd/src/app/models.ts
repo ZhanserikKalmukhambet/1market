@@ -16,8 +16,13 @@ export interface AuthToken {
 }
 export interface Category {
   name : string;
+  subCategories : SubCategory[];
+}
+export interface SubCategory {
+  name: string;
 }
 export interface Product {
+  id: string;
   name : string;
   main_image : string;
   is_active : boolean;
@@ -25,5 +30,6 @@ export interface Product {
   description : string;
   count : number;
   rating : number;
-  category : Category;
+  category : string;
+  subCategory : string;
 }

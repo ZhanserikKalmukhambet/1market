@@ -18,8 +18,12 @@ import { CategoriesNavComponent } from './components/categories-nav/categories-n
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { CategoriesSliderComponent } from './components/categories-slider/categories-slider.component';
 import { HomePageFooterComponent } from './components/home-page-footer/home-page-footer.component';
-import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+import { CategoryDetailComponent } from './pages/category-detail/category-detail.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { ProductListInCategoryDetailComponent } from './components/product-list-in-category-detail/product-list-in-category-detail.component';
+import { ItemCartComponent } from './pages/item-cart/item-cart.component';
+import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
+import { BasketComponent } from './pages/basket/basket.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,11 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
     CategoriesSliderComponent,
     HomePageFooterComponent,
     CategoryDetailComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    ProductListInCategoryDetailComponent,
+    ItemCartComponent,
+    HeaderMenuComponent,
+    BasketComponent
   ],
 
   imports: [

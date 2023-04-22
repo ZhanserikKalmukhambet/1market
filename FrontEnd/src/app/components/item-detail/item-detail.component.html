@@ -1,4 +1,14 @@
-<div class="item-detail">
-  <img src="{Product}" alt="">
-
+<div *ngIf="item" class="item">
+<!--  <img src="{{product.main_image}}" alt="">-->
+  <div class="item-img">
+    <img src="assets/media/images/Products/Iphone14ProMax256GbPink.jpg" alt="">
+  </div>
+  <a href="">{{item.name}}</a>
+  <div class="rating-in-stars">
+    <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="true"></ngb-rating>
+  </div>
+  <div class="price">
+    <p>Цена</p>
+    <span>{{item.price}} т</span>
+  </div>
 </div>
