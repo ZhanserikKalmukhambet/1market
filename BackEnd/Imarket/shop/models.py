@@ -1,7 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.db import models
-from .choices import Role
+from users.models import User
+from users.choices import Role
 
 
 def validate_rating(value):
@@ -17,7 +18,7 @@ class Shop(models.Model):
     address = models.CharField(max_length=255, verbose_name='Shop address', unique=True)
 
     seller = models.ForeignKey(
-        to=get_user_model(),
+        to=User,
         on_delete=models.CASCADE,
         related_name='seller_shops',
         limit_choices_to={'user_type': Role.SELLER}
