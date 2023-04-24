@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.core.validators import RegexValidator
 from django.db import models
+from .choices import Role
 
 
 class UserManager(BaseUserManager):
@@ -34,12 +35,6 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
-    SELLER = 'Seller'
-    CUSTOMER = 'Customer'
-    ROLE_CHOICES = (
-        (SELLER, "Продавец"),
-        (CUSTOMER, "Покупатель")
-    )
 
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=150, unique=True)
@@ -47,7 +42,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=30)
     phone_number = models.CharField(max_length=15, validators=[RegexValidator(regex='^[0-9]*$')])
     birth_date = models.DateField(null=True, blank=True)
-    user_type = models.CharField(max_length=10, choices=ROLE_CHOICES)
+    user_type = models.CharField(max_length=10, choices=Role.choices,)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -56,6 +51,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         db_table = 'auth_user'
         verbose_name = 'Пользователь'
+        verbose_name_plural = 'Пользователи'
 
     def __str__(self):
         return f"user {self.pk}"
