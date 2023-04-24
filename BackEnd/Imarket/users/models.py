@@ -3,7 +3,6 @@ from django.core.validators import RegexValidator
 from django.db import models
 
 
-
 class UserManager(BaseUserManager):
     def _create_user(self, email, password=None, **extra_fields):
         if not email:
