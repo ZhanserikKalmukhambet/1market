@@ -10,11 +10,7 @@ urlpatterns = [
     path('api/', include('orders.urls')),
     path('api/', include('shop.urls')),
     path('api/', include('users.urls')),
-<<<<<<< HEAD
     path('', include('users.api.urls')),
-=======
-    path('', include('users.api.urls'))
->>>>>>> 0cfb313c992537aae8416a2aa2896e58a4ebdd80
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
