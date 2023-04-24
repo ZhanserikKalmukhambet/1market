@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
+from rest_framework_simplejwt import settings
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
