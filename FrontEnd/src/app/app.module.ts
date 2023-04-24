@@ -24,6 +24,7 @@ import { ProductListInCategoryDetailComponent } from './components/product-list-
 import { ItemCartComponent } from './pages/item-cart/item-cart.component';
 import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
 import { BasketComponent } from './pages/basket/basket.component';
+import { ItemInBasketComponent } from './components/item-in-basket/item-in-basket.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { BasketComponent } from './pages/basket/basket.component';
     ProductListInCategoryDetailComponent,
     ItemCartComponent,
     HeaderMenuComponent,
-    BasketComponent
+    BasketComponent,
+    ItemInBasketComponent
   ],
 
   imports: [

@@ -34,3 +34,8 @@
 .basket-page> div  button:hover{
   filter: brightness(90%);
 }
+.ssss{
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}

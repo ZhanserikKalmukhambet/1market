@@ -10,30 +10,67 @@ export class ProductListInCategoryDetailComponent {
   // products = Product[];
 
    products = [
-    {
-      "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",
-      "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-      "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-      "price": 707,
-      "rating": 4,
-      "count" : 4,
-      "main_image" : "sdf",
-      "is_active" : true,
-      "category" : "sd",
-      "subCategory" : "sd"
-    },
-    {
-      "id": "9603ae0a-9ba7-436b-8895-d9f3a3542771",
-      "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-      "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-      "price": 205,
-      "rating": 4,
-      "count" : 4,
-      "main_image" : "sdf",
-      "is_active" : true,
-      "category" : "sd",
-      "subCategory" : "sd"
-    },
+     {
+       "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",
+       "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
+       "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
+       "price": 707,
+       "rating": 4,
+       "count" : 4,
+       "main_image" : "sdf",
+       "is_active" : true,
+       "category" : "sd",
+       "subCategory" : "sd"
+     },
+     {
+       "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",
+       "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
+       "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
+       "price": 707,
+       "rating": 4,
+       "count" : 4,
+       "main_image" : "sdf",
+       "is_active" : true,
+       "category" : "sd",
+       "subCategory" : "sd"
+     },
+     {
+       "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",
+       "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
+       "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
+       "price": 707,
+       "rating": 4,
+       "count" : 4,
+       "main_image" : "sdf",
+       "is_active" : true,
+       "category" : "sd",
+       "subCategory" : "sd"
+     },
+     {
+       "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",
+       "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
+       "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
+       "price": 707,
+       "rating": 4,
+       "count" : 4,
+       "main_image" : "sdf",
+       "is_active" : true,
+       "category" : "sd",
+       "subCategory" : "sd"
+     },
+     {
+       "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",
+       "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
+       "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
+       "price": 707,
+       "rating": 4,
+       "count" : 4,
+       "main_image" : "sdf",
+       "is_active" : true,
+       "category" : "sd",
+       "subCategory" : "sd"
+     },
+
      {
        "id": "a45eb5d5-d21b-4c14-8511-6934ee84936c",
        "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",

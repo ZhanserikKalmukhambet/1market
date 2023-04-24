@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   right: boolean ;
+  isUser : boolean = true;
   constructor() {
-    this.right = false
+    this.right = true
   }
 
   ngOnInit(): void {

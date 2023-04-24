@@ -15,12 +15,12 @@ export class LoginService {
   constructor(private client: HttpClient) {
   }
 
-  // login(username: string, password: string): Observable<AuthToken> {
-  //   // return this.client.post<AuthToken>(
-  //   //   `${this.BASE_URL}/api/login/`,
-  //   //   {username, password}
-  //   // )
-  // }
+  login(username: string, password: string): Observable<AuthToken> {
+    return this.client.post<AuthToken>(
+      `${this.BASE_URL}/api/login/`,
+      {username, password}
+    )
+  }
 
 
 }

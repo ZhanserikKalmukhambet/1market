@@ -3,7 +3,7 @@
   <div class="item-img">
     <img src="assets/media/images/Products/Iphone14ProMax256GbPink.jpg" alt="">
   </div>
-  <a href="">{{item.name}}</a>
+  <a routerLink="/item" href="">{{item.name}}</a>
   <div class="rating-in-stars">
     <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="true"></ngb-rating>
   </div>
