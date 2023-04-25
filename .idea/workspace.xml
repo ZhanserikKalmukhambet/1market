@@ -5,30 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a07766a-c2d9-4f78-878b-eef1181d6788" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/category-detail/category-detail.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/category-detail/category-detail.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/category-detail/category-detail.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/category-detail/category-detail.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/home-page-footer/home-page-footer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/home-page-footer/home-page-footer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/home-page-footer/home-page-footer.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/home-page-footer/home-page-footer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/services/category/category.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/services/category/category.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/assets/media/images/Products/Iphone14ProMax256GbPink.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/categories-slider/categories-slider.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/categories-slider/categories-slider.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/models.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/home-page/home-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/home-page/home-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/home-page/home-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/home-page/home-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,33 +36,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Asus/1market",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\Asus\\1market\\FrontEnd\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/1market&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Asus\\1market\\FrontEnd\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Asus\1market\FrontEnd\src\assets\media" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\product" />
       <recent name="C:\Users\Asus\1market\FrontEnd\src\app\components" />
-      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\category" />
-      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\register" />
-      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\login" />
       <recent name="C:\Users\Asus\1market\FrontEnd\src\app\pages" />
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\item" />
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -103,7 +82,20 @@
       <workItem from="1681721456624" duration="10000" />
       <workItem from="1681757633672" duration="18000" />
       <workItem from="1681881800715" duration="1853000" />
-      <workItem from="1681926893348" duration="7999000" />
+      <workItem from="1681926893348" duration="8450000" />
+      <workItem from="1681959509257" duration="2454000" />
+      <workItem from="1681990331265" duration="589000" />
+      <workItem from="1682101163002" duration="11856000" />
+      <workItem from="1682137380326" duration="7172000" />
+      <workItem from="1682186836473" duration="7176000" />
+      <workItem from="1682258340185" duration="5182000" />
+      <workItem from="1682327573941" duration="587000" />
+      <workItem from="1682328177217" duration="623000" />
+      <workItem from="1682339755835" duration="2534000" />
+      <workItem from="1682412603095" duration="519000" />
+      <workItem from="1682421917395" duration="604000" />
+      <workItem from="1682441705886" duration="20000" />
+      <workItem from="1682441942561" duration="20000" />
     </task>
     <servers />
   </component>

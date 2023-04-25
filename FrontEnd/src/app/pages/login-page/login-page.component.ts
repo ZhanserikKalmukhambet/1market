@@ -14,6 +14,7 @@ export class LoginPageComponent implements OnInit{
 
   username: string = '';
   password: string = '';
+  // private logged: boolean;
 
   constructor(private loginService: LoginService) {
   }
@@ -36,7 +37,7 @@ export class LoginPageComponent implements OnInit{
   logout() {
     localStorage.removeItem('token');
     // Request to the Django
-    this.logged = false;
+    LoginService.logged = false;
   }
 
 }
