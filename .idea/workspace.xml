@@ -5,9 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a07766a-c2d9-4f78-878b-eef1181d6788" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/Imarket/shop/migrations/0003_merge_0002_initial_0002_remove_shop_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/Imarket/shop/migrations/0004_remove_shop_seller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/Imarket/users/migrations/0004_alter_user_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/sub-category-detail/sub-category-detail.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/sub-category-detail/sub-category-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/sub-category-detail/sub-category-detail.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/sub-category-detail/sub-category-detail.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/categories-nav/categories-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/categories-nav/categories-nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/categories-nav/categories-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/categories-nav/categories-nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header-buttons/header-buttons.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header-buttons/header-buttons.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header-menu/header-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header-menu/header-menu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/basket/basket.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/basket/basket.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/home-page/home-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/home-page/home-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/services/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/services/login/login.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +70,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/1market&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/Web Dev&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -58,9 +86,9 @@
       <recent name="C:\Users\Asus\1market\FrontEnd\src\assets\media" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\pages" />
       <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\product" />
       <recent name="C:\Users\Asus\1market\FrontEnd\src\app\components" />
-      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\pages" />
       <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\item" />
       <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services" />
     </key>
@@ -96,6 +124,10 @@
       <workItem from="1682421917395" duration="604000" />
       <workItem from="1682441705886" duration="20000" />
       <workItem from="1682441942561" duration="20000" />
+      <workItem from="1682452228304" duration="368000" />
+      <workItem from="1682494731964" duration="7734000" />
+      <workItem from="1682536463803" duration="4592000" />
+      <workItem from="1682567377951" duration="3602000" />
     </task>
     <servers />
   </component>

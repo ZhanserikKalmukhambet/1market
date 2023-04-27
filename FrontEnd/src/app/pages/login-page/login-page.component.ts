@@ -12,32 +12,48 @@ import { LoginService } from "../../services/login/login.service";
 export class LoginPageComponent implements OnInit{
 
 
-  username: string = '';
-  password: string = '';
+  // username: string = '';
+  public username: string ;
+  public password: string ;
+  // password: string = '';
   // private logged: boolean;
+  public static isLogged : boolean;
+  // static isLogged: boolean;
+  // static isLogged: boolean;
 
-  constructor(private loginService: LoginService) {
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) {
+    this.username = '';
+    this.password = '';
   }
 
   ngOnInit() {
     const token = localStorage.getItem('token');
     if (token) {
-      LoginService.logged = true;
+      this.loginService.logged = true;
+    }
+    if(this.loginService.logged == true){
+      LoginPageComponent.isLogged = true;
     }
   }
   login() {
-    this.loginService.login(this.username, this.password).subscribe((data) => {
-      localStorage.setItem('token', data.token);
-      LoginService.logged = true;
+    // this.loginService.logIn(this.username, this.password).subscribe((data) => {
+    //   localStorage.setItem('token', data.token);
+      this.loginService.logged = true;
+      // LoginPageComponent.isLogged = true;
+      // console.log(LoginPageComponent.isLogged)
       this.username = '';
       this.password = '';
-    });
+      this.router.navigate([`/`]);
+    // });
   }
-  //
+
   logout() {
     localStorage.removeItem('token');
     // Request to the Django
-    LoginService.logged = false;
+    // LoginService.logged = false;
   }
 
 }

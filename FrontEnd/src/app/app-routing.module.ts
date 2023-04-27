@@ -7,14 +7,18 @@ import {CategoriesSliderComponent} from "./components/categories-slider/categori
 import {CategoryDetailComponent} from "./pages/category-detail/category-detail.component";
 import {ItemCartComponent} from "./pages/item-cart/item-cart.component";
 import {BasketComponent} from "./pages/basket/basket.component";
+import {SubCategoryDetailComponent} from "./pages/sub-category-detail/sub-category-detail.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
   {path: 'registration', component: RegistrationPageComponent},
   {path: 'shop', component: HomePageComponent},
-  {path: 'category', component: CategoryDetailComponent},
-  {path: 'item', component: ItemCartComponent},
-  {path: 'basket', component: BasketComponent}
+  {path: 'categories/1', component: CategoryDetailComponent},
+  {path: 'categories/subcategories/1/1', component: ItemCartComponent},
+  {path: 'basket', component: BasketComponent},
+  {path: 'categories/:id', component: CategoryDetailComponent},
+  {path: 'categories/1/subcategories/1', component: SubCategoryDetailComponent},
+  {path: '', redirectTo: 'shop', pathMatch: 'full'}
   // {path: 'slider', component: CategoriesSliderComponent},
 
 ];
