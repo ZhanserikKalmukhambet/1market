@@ -1,36 +1,25 @@
 from django.db import models
+from users.models import User
+from shop.models import WarehouseItem
+from users.choices import Role
 
 
 class Order(models.Model):
-    first_name = models.CharField(max_length=100, verbose_name='First name')
-    last_name = models.CharField(max_length=100, verbose_name='Last name')
-    phone_number = models.CharField(max_length=50, verbose_name='Phone number')
-    email = models.EmailField(max_length=255, verbose_name='Email')
-    address = models.CharField(max_length=255, verbose_name='Address')
-    city = models.CharField(max_length=150, verbose_name='City')
-    delivery_time = models.DateTimeField(verbose_name='Delivery time')
-    paid = models.BooleanField(default=False, verbose_name='Paid for order')
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ('-created_at', '-updated_at',)
+    user = models.OneToOneField(User,
+                                on_delete=models.CASCADE,
+                                null=True,
+                                limit_choices_to={'user_type': Role.CUSTOMER})
+    completed = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.pk}. {self.address} - {self.phone_number}'
-
-    def get_total_price(self):
-        return sum(item.get_price() for item in self.items.all())
+        return f'{self.user.name} - {self.completed}'
 
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name='items')
-    product = models.ForeignKey(to='products.Product', on_delete=models.CASCADE, related_name='order_items')
+    warehouse_item = models.OneToOneField(WarehouseItem, on_delete=models.CASCADE, null=True)
     quantity = models.PositiveIntegerField(default=1)
+    delivery_date = models.DateTimeField(verbose_name='Delivery Date')
+    delivery_address = models.CharField(max_length=255, verbose_name='Address of deliver')
+    delivery_price = models.FloatField(default=0)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, verbose_name='Order Details', related_name='order_items',)
 
-    def __str__(self):
-        return f'{self.id} ({self.product}) --> {self.order.first_name}'
-
-    def get_price(self):
-        return self.quantity * self.product.price

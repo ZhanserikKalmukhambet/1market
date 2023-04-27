@@ -1,15 +1,11 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.core.validators import RegexValidator
 from django.db import models
-from django.utils import timezone
 from .choices import Role
 
 
 class UserManager(BaseUserManager):
     def _create_user(self, email, password=None, **extra_fields):
-        """
-        Creates and saves a User with the given email and password.
-        """
         if not email:
             raise ValueError('The Email field must be set')
 
@@ -46,12 +42,16 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=30)
     phone_number = models.CharField(max_length=15, validators=[RegexValidator(regex='^[0-9]*$')])
     birth_date = models.DateField(null=True, blank=True)
-    user_type = models.CharField(max_length=10, choices=Role.choices)
+    user_type = models.CharField(max_length=10, choices=Role.choices,)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    date_joined = models.DateTimeField(default=timezone.now)
 
     objects = UserManager()
 
     class Meta:
         db_table = 'auth_user'
+        verbose_name = 'Пользователь'
+        verbose_name_plural = 'Пользователи'
+
+    def __str__(self):
+        return f"user {self.pk}"
