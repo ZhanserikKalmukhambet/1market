@@ -1,6 +1,7 @@
 import datetime
 import random
 import string
+import time
 
 import jwt
 from django.core.exceptions import ValidationError
@@ -13,6 +14,8 @@ from .models import User
 from .serializers import UserSerializer
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
+
+random.seed(time.time())
 
 
 @csrf_exempt
@@ -50,6 +53,7 @@ class UserView(APIView):
 
 
 class RegisterView(APIView):
+    random.seed(time.time())
     random_gen_code = ''.join(random.choice(string.digits) for i in range(6))
 
     def post(self, request):
@@ -80,6 +84,7 @@ class LoginView(APIView):
         payload = {
             'id': user.id,
             'email': user.email,
+            'user_type': user.user_type,
             'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
             'iat': datetime.datetime.utcnow()
         }
@@ -87,18 +92,5 @@ class LoginView(APIView):
         token = jwt.encode(payload, 'secret', algorithm='HS256')
 
         response = Response(token)
-
-        return response
-
-
-class LogoutView(APIView):
-    def post(self, request):
-        response = Response()
-
-        response.delete_cookie(key='token')
-
-        response.data = {
-            'data': 'Logged out!'
-        }
 
         return response
