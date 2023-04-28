@@ -1,3 +1,4 @@
+from .choices import Role
 from .models import User
 from rest_framework import serializers
 
@@ -5,7 +6,8 @@ from rest_framework import serializers
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'password']
+
+        fields = ['id', 'first_name', 'last_name', 'username', 'email', 'user_type', 'phone_number', 'password']
         extra_kwargs = {
             'password': {'write_only': True}  # чтобы пароль был невиден
         }
