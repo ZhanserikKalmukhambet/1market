@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="basket-page">
+  <h2>Мои покупки 1Market</h2>
+  <div *ngIf="isEmpty">
+    <div>
+      <img src="assets/media/icons/empty-cart.svg" alt="">
+    </div>
+    <h2>Вы еще не сделали никаких покупок!</h2>
+    <span>Посмотрите предложения на странице товаров</span>
+    <a  href="/categories/1"><button>На страницу товаров</button></a>
+  </div>
+  <div *ngIf="!isEmpty">
+    <app-item-in-my-orders
+      *ngFor="let item of products "
+      [item]="item"
+    ></app-item-in-my-orders>
+  </div>
+
+</div>
+

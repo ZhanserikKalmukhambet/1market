@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-basket',
-  templateUrl: './basket.component.html',
-  styleUrls: ['./basket.component.css']
+  selector: 'app-my-orders',
+  templateUrl: './my-orders.component.html',
+  styleUrls: ['./my-orders.component.css']
 })
-export class BasketComponent {
+export class MyOrdersComponent {
   isEmpty : boolean = false;
   products = [
     {
@@ -45,6 +45,5 @@ export class BasketComponent {
       "category" : "sd",
       "subCategory" : "sd"
     }
-    ]
-
+  ]
 }

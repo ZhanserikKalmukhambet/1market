@@ -28,6 +28,10 @@ import { HeaderMenuComponent } from './components/header-menu/header-menu.compon
 import { BasketComponent } from './pages/basket/basket.component';
 import { ItemInBasketComponent } from './components/item-in-basket/item-in-basket.component';
 import { SubCategoryDetailComponent } from './pages/sub-category-detail/sub-category-detail.component';
+import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
+import { ItemInMyOrdersComponent } from './components/item-in-my-orders/item-in-my-orders.component';
+import { ItemInSellerProductsComponent } from './components/item-in-seller-products/item-in-seller-products.component';
+import { SellerProductsComponent } from './pages/seller-products/seller-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +50,11 @@ import { SubCategoryDetailComponent } from './pages/sub-category-detail/sub-cate
     HeaderMenuComponent,
     BasketComponent,
     ItemInBasketComponent,
-    SubCategoryDetailComponent
+    SubCategoryDetailComponent,
+    MyOrdersComponent,
+    ItemInMyOrdersComponent,
+    ItemInSellerProductsComponent,
+    SellerProductsComponent
   ],
 
   imports: [

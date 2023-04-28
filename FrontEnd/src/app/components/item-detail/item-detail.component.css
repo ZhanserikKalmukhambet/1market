@@ -54,3 +54,11 @@
   color: #00A2DC;
   font-weight: bold;
 }
+.forSeller button{
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  background-color: #00A2DC;
+  color: white;
+}
+

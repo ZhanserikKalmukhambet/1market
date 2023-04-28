@@ -5,48 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a07766a-c2d9-4f78-878b-eef1181d6788" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-my-orders/item-in-my-orders.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-my-orders/item-in-my-orders.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-my-orders/item-in-my-orders.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-my-orders/item-in-my-orders.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-seller-products/item-in-seller-products.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-seller-products/item-in-seller-products.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-seller-products/item-in-seller-products.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-seller-products/item-in-seller-products.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/my-orders/my-orders.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/my-orders/my-orders.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/my-orders/my-orders.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/my-orders/my-orders.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/Imarket/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/Imarket/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/Imarket/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/Imarket/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/orders/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/orders/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/orders/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/products/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/products/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/products/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/products/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/choices.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/permissions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/sellers/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/shop/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/shop/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/shop/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/shop/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/shop/migrations/0002_remove_shop_user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/shop/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/shop/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/shop/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/users/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/users/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/dsf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header-menu/header-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header-menu/header-menu.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header-menu/header-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header-menu/header-menu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-basket/item-in-basket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-in-basket/item-in-basket.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/models.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/basket/basket.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/basket/basket.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/basket/basket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/basket/basket.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/services/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/services/login/login.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,10 +91,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Asus\1market\FrontEnd\src\app\pages" />
-      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\product" />
       <recent name="C:\Users\Asus\1market\FrontEnd\src\app\components" />
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\storage" />
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\product" />
       <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\item" />
-      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -139,7 +132,8 @@
       <workItem from="1682494731964" duration="7734000" />
       <workItem from="1682536463803" duration="4592000" />
       <workItem from="1682567377951" duration="3901000" />
-      <workItem from="1682593242312" duration="585000" />
+      <workItem from="1682593242312" duration="1224000" />
+      <workItem from="1682673318050" duration="9049000" />
     </task>
     <servers />
   </component>

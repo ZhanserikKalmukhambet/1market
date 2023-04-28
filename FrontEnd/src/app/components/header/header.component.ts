@@ -8,19 +8,18 @@ import {LoginPageComponent} from "../../pages/login-page/login-page.component";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
-  right: boolean ;
-  isUser : boolean = false;
-  constructor(private loginService: LoginService) {
-    this.right = true
-    // this.isUser = LoginPageComponent.isLogged
+  logged: boolean | undefined;
+  isCustomer: boolean | undefined;
+  isSeller: boolean | undefined;
+  constructor(public loginService: LoginService) {
+    if(localStorage.getItem('logged')=='true') this.logged = true;
+    if(localStorage.getItem('isCustomer')=='true') this.isCustomer = true;
+    if(localStorage.getItem('isSeller')=='true') this.isSeller = true;
   }
 
   ngOnInit(): void {
-    this.on();
-    this.isUser = this.loginService.logged
-    console.log(this.isUser + "Sgg")
+
+    console.log('logged: ', this.logged, 'seller: ', this.isSeller, 'customer: ', this.isCustomer)
   }
-  on(){
-    this.right = true
-  }
+
 }

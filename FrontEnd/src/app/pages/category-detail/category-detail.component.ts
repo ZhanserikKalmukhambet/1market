@@ -193,21 +193,16 @@ export class CategoryDetailComponent implements OnInit{
     //   // this.category = {} as Category
     //
     // }
-  constructor(private elRef: ElementRef) {
+  isSeller: boolean | undefined;
+  isCustomer: boolean | undefined;
+  constructor() {
 
   }
-  //
+
 
   ngOnInit() {
-    console.log(this.categoryName)
-    // @ts-ignore
-    // for(let div of myDiv){
-    //   // console.log(div)
-    //   if (div.innerText === this.currentCategory) {
-    //     div.style.color = 'black';
-    //     div.style.fontWeight = 'bold';
-    //   }
-    // }
+    if(localStorage.getItem('isSeller') == 'true') this.isSeller = true;
+    if(localStorage.getItem('isCustomer') == 'true') this.isCustomer = true;
   }
 
 }

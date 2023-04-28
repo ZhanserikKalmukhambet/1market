@@ -1,11 +1,11 @@
 import {Component, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-item-in-basket',
-  templateUrl: './item-in-basket.component.html',
-  styleUrls: ['./item-in-basket.component.css']
+  selector: 'app-item-in-seller-products',
+  templateUrl: './item-in-seller-products.component.html',
+  styleUrls: ['./item-in-seller-products.component.css']
 })
-export class ItemInBasketComponent {
+export class ItemInSellerProductsComponent {
   @Input() item = {
     "id": "",
     "name": "",
@@ -17,6 +17,5 @@ export class ItemInBasketComponent {
     "is_active" : true,
     "category" : "",
     "subCategory" : ""
-
   }
 }

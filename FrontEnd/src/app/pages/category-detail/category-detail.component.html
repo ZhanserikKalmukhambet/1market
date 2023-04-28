@@ -13,7 +13,7 @@
         </a>
       </div>
     </div>
-    <div class="filter-by-price-in-category-detail">
+    <div class="filter-by-price-in-category-detail" *ngIf="isCustomer">
       <h2>Цена</h2>
       <div>
         <input type="checkbox" name="" id="price100000">
@@ -36,7 +36,7 @@
         <span>более 200 000т</span>
       </div>
     </div>
-    <div class="filter-by-sellers-in-category-detail">
+    <div class="filter-by-sellers-in-category-detail" *ngIf="isCustomer">
       <h2>Продавцы</h2>
       <div>
         <input type="checkbox" name="" id="seller1">
@@ -59,7 +59,7 @@
         <span>Продавец5</span>
       </div>
     </div>
-    <div class="filter-by-rating-in-category-detail">
+    <div class="filter-by-rating-in-category-detail" *ngIf="isCustomer">
       <h2>Рейтинг</h2>
       <div>
         <input type="checkbox" name="" id="rate2">
