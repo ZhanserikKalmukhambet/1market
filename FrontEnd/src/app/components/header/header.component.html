@@ -11,6 +11,6 @@
     </button>
   </form>
 
-  <app-header-buttons *ngIf="isUser"></app-header-buttons>
-  <app-header-menu *ngIf="!isUser"></app-header-menu>
+  <app-header-buttons *ngIf="!logged"></app-header-buttons>
+  <app-header-menu *ngIf="logged"></app-header-menu>
 </header>

@@ -29,8 +29,15 @@ export class ItemCartComponent implements OnInit{
     "category" : "sd",
     "subCategory" : "sd"
   }
+  logged: boolean = false;
+  isCustomer: boolean = false;
+  isSeller: boolean = false;
   ngOnInit(): void {
     this.item.description = this.item.description.replace(/_/g, '<br>');
+    if(localStorage.getItem('logged') == 'true') this.logged = true;
+    if(localStorage.getItem('isCustomer') == 'true') this.isCustomer = true;
+    if(localStorage.getItem('isSeller') == 'true') this.isSeller = true;
+
   }
 
   changeMainImage(event: any){

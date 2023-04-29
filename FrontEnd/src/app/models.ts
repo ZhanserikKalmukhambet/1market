@@ -18,6 +18,10 @@ export interface Category {
   name : string;
   subCategories : SubCategory[];
 }
+export interface Person {
+  username : string;
+  password : string;
+}
 export interface SubCategory {
   name: string;
 }

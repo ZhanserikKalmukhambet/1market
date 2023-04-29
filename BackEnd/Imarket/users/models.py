@@ -1,5 +1,4 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-from django.core.validators import RegexValidator
 from django.db import models
 from .choices import Role
 
@@ -16,11 +15,11 @@ class UserManager(BaseUserManager):
         return user
 
     def create_user(self, email, password=None, **extra_fields):
-        extra_fields.setdefault('user_type', 'CUSTOMER')
+        extra_fields.setdefault('user_type', Role.CUSTOMER)
         return self._create_user(email, password, **extra_fields)
 
     def create_superuser(self, email, password=None, **extra_fields):
-        extra_fields.setdefault('user_type', 'ADMIN')
+        extra_fields.setdefault('user_type', Role.ADMIN)
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
@@ -34,15 +33,15 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+    REQUIRED_FIELDS = []
 
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=150, unique=True)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    phone_number = models.CharField(max_length=15, validators=[RegexValidator(regex='^[0-9]*$')])
+    first_name = models.CharField(max_length=30, default="")
+    last_name = models.CharField(max_length=30, default="")
+    phone_number = models.CharField(max_length=15)
     birth_date = models.DateField(null=True, blank=True)
-    user_type = models.CharField(max_length=10, choices=Role.choices,)
+    user_type = models.CharField(max_length=10, choices=Role.choices, default=Role.CUSTOMER)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -50,8 +49,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     class Meta:
         db_table = 'auth_user'
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
 
     def __str__(self):
         return f"user id: {self.pk}, username: {self.username}"

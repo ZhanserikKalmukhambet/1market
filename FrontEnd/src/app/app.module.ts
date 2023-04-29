@@ -12,6 +12,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+// import { HttpClientModule } from '@angular/common/http';
+
 import {AuthInterceptor} from "./AuthInterceptor";
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
 import { CategoriesNavComponent } from './components/categories-nav/categories-nav.component';
@@ -25,6 +27,11 @@ import { ItemCartComponent } from './pages/item-cart/item-cart.component';
 import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
 import { BasketComponent } from './pages/basket/basket.component';
 import { ItemInBasketComponent } from './components/item-in-basket/item-in-basket.component';
+import { SubCategoryDetailComponent } from './pages/sub-category-detail/sub-category-detail.component';
+import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
+import { ItemInMyOrdersComponent } from './components/item-in-my-orders/item-in-my-orders.component';
+import { ItemInSellerProductsComponent } from './components/item-in-seller-products/item-in-seller-products.component';
+import { SellerProductsComponent } from './pages/seller-products/seller-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +49,12 @@ import { ItemInBasketComponent } from './components/item-in-basket/item-in-baske
     ItemCartComponent,
     HeaderMenuComponent,
     BasketComponent,
-    ItemInBasketComponent
+    ItemInBasketComponent,
+    SubCategoryDetailComponent,
+    MyOrdersComponent,
+    ItemInMyOrdersComponent,
+    ItemInSellerProductsComponent,
+    SellerProductsComponent
   ],
 
   imports: [
@@ -51,7 +63,8 @@ import { ItemInBasketComponent } from './components/item-in-basket/item-in-baske
     ReactiveFormsModule,
     FormsModule,
     SlickCarouselModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
 
   providers: [

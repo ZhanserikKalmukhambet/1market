@@ -38,11 +38,21 @@ ngb-rating {
   display: flex;
   align-items: center;
   margin-left: 10px;
-  text-transform: initial;
+  text-transform: capitalize;
   color: #00A2DC;
   font-size: 14px;
   font-weight: 500;
+  transition: .4s;
 }
+
+.all-category-in-category-detail div a:hover{
+  color: black;
+}
+
+.all-category-in-category-detail div a::first-letter (:first-letter){
+  text-transform: lowercase;
+}
+
 .all-category-in-category-detail div img{
   width: 18px;
   margin-right: 10px;
@@ -68,7 +78,9 @@ ngb-rating {
 .category-detail-right{
   width: 80%;
 }
-
+.currentCategory{
+  z-index: -1;
+}
 .category-detail-right h2{
   display: flex;
   align-items: center;

@@ -1,25 +1,29 @@
+<!--<h2>dsgsg</h2>-->
 <div class="card w-50 container mt-5">
   <h4 class="card-header">Login</h4>
   <div class="card-body container">
     <form>
       <div class="mb-3">
         <label class="form-label">Username</label>
-        <input type="text" [(ngModel)]="username" class="form-control"  />
+        <input type="text" [(ngModel)]="person.username" class="form-control" name="username" />
 
       </div>
       <div class="mb-3">
         <label class="form-label">Password</label>
-        <input type="password" [(ngModel)]="password" class="form-control" />
+        <input type="password" [(ngModel)]="person.password" class="form-control" name="password" />
 
       </div>
 
       <div>
-        <button  class="btn btn-primary">
+        <button type="submit" (click)="login()" class="btn btn-primary">
           Login
         </button>
         <a routerLink="../registration" class="btn btn-link">Register</a>
       </div>
     </form>
+    <div class="login-error" *ngIf="!loginError">
+      <span>Вы ввели не правильный логин или пароль, попробуйте заново!</span>
+    </div>
   </div>
 </div>
 
