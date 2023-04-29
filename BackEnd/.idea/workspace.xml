@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75cfb4fc-dcdf-4c42-8e7d-3dd1eaf68455" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/orders/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/orders/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/shop/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/users/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/users/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/app/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/app/components/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/app/pages/basket/basket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/app/pages/basket/basket.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +48,7 @@
       <workItem from="1682419463115" duration="6521000" />
       <workItem from="1682505924444" duration="9167000" />
       <workItem from="1682683652134" duration="14791000" />
-      <workItem from="1682742168415" duration="3626000" />
+      <workItem from="1682742168415" duration="4390000" />
     </task>
     <servers />
   </component>
