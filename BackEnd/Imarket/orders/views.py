@@ -16,12 +16,10 @@ class OrderViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
 
-
 class OrderItemViewSet(viewsets.ModelViewSet):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
-
 
     def get_order_items_in_cart(self, request, user_id):
         queryset = OrderItem.objects.filter(order__user_id=user_id)
@@ -30,5 +28,5 @@ class OrderItemViewSet(viewsets.ModelViewSet):
 
     def get_user_orders(self, request, user_id):
         queryset = Order.objects.filter(user_id=user_id)
-        serializer = OrderItemSerializer(queryset, many=True)
+        serializer = OrderSerializer(queryset, many=True)
         return Response(serializer.data)
