@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # third applications
     'rest_framework',
     'corsheaders',
+    'drf_yasg',
 
     # internal applications
     'products',
