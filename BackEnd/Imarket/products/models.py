@@ -41,7 +41,7 @@ class Product(models.Model):
         ordering = ('-rating', )
 
     def __str__(self):
-        return f"{self.name} ({self.category})"
+        return f"id: {self.pk}, {self.name} ({self.category}), rating: {self.rating}"
 
 
 class ProductImage(models.Model):
