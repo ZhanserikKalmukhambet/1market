@@ -1,3 +1,4 @@
+<app-header></app-header>
 <app-categories-nav></app-categories-nav>
 <div class="item-cart">
   <span class="category-of-item">
@@ -32,16 +33,22 @@
     <div class="item-cart-info">
       <h2>{{item.name}}</h2>
       <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="false"></ngb-rating>
-      <div class="price">
+      <div class="price" *ngIf="isCustomer">
         <p>Цена</p>
         <span>{{item.price}} т</span>
       </div>
       <div class="item-description">
         <p [innerHTML]="item.description"></p>
       </div>
+      <div class="forSeller" *ngIf="isSeller">
+        У вас есть этот товар?
+        <input type="number" placeholder="Укажите количество">
+        <input type="number" placeholder="Введите цену для вашего товара">
+        <button>Добавить в каталог</button>
+      </div>
     </div>
   </div>
-  <div class="sellers-in-item-cart">
+  <div class="sellers-in-item-cart" *ngIf="isCustomer">
     <span>Продавцы</span>
     <div>
       <div class="seller">
@@ -51,7 +58,8 @@
           Самовывоз: сегодня
         </div>
         <span>129 000т</span>
-        <button class="btn btn-primary">Добавить в корзину</button>
+        <button class="btn btn-primary" *ngIf="logged">Добавить в корзину</button>
+        <p *ngIf="!logged">Вы не вошли в аккаунт? <a href="/login">Войти!</a></p>
       </div>
       <div class="seller">
         <h2>Продавец 1</h2>
@@ -60,7 +68,8 @@
           Самовывоз: сегодня
         </div>
         <span>129 000т</span>
-        <button class="btn btn-primary">Добавить в корзину</button>
+        <button class="btn btn-primary" *ngIf="logged">Добавить в корзину</button>
+        <p *ngIf="!logged">Вы не вошли в аккаунт? <a href="/login">Войти!</a></p>
       </div>
       <div class="seller">
         <h2>Продавец 1</h2>
@@ -69,7 +78,8 @@
           Самовывоз: сегодня
         </div>
         <span>129 000т</span>
-        <button class="btn btn-primary">Добавить в корзину</button>
+        <button class="btn btn-primary" *ngIf="logged">Добавить в корзину</button>
+        <p *ngIf="!logged">Вы не вошли в аккаунт? <a href="/login">Войти!</a></p>
       </div>
       <div class="seller">
         <h2>Продавец 1</h2>
@@ -78,7 +88,8 @@
           Самовывоз: сегодня
         </div>
         <span>129 000т</span>
-        <button class="btn btn-primary">Добавить в корзину</button>
+        <button class="btn btn-primary" *ngIf="logged">Добавить в корзину</button>
+        <p *ngIf="!logged">Вы не вошли в аккаунт? <a href="/login">Войти!</a></p>
       </div>
     </div>
   </div>

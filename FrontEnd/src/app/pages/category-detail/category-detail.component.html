@@ -1,20 +1,19 @@
+<app-header></app-header>
 <app-categories-nav></app-categories-nav>
 <div class="category-detail">
 
   <div class="category-detail-left">
     <div class="all-category-in-category-detail" >
       <h2>Все категории</h2>
-      <div >
-        <a class="currentCategory" href="" [(ngModel)]="currentCategory"><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Молочные продукты </a>
-        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Сладости и выпечка </a>
-        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Овощи и фрукты</a>
-        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Крупы, хлопья</a>
-        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Масла, соусы</a>
-        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Консервация</a>
-        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Колбасы, сосиски</a>
+      <div>
+        <a class="currentCategory" [ngStyle]="{'color': category.name === currentCategory.name ? 'black' : '##00A2DC',
+                                  'fontWeight': category.name === currentCategory.name ? 'bold' : '##normal'}
+                        " href="" *ngFor="let category of categories">
+          <img src="../../../assets/media/icons/rounded-arrow.png" alt=""> {{category.name | lowercase}}
+        </a>
       </div>
     </div>
-    <div class="filter-by-price-in-category-detail">
+    <div class="filter-by-price-in-category-detail" *ngIf="isCustomer">
       <h2>Цена</h2>
       <div>
         <input type="checkbox" name="" id="price100000">
@@ -37,7 +36,7 @@
         <span>более 200 000т</span>
       </div>
     </div>
-    <div class="filter-by-sellers-in-category-detail">
+    <div class="filter-by-sellers-in-category-detail" *ngIf="isCustomer">
       <h2>Продавцы</h2>
       <div>
         <input type="checkbox" name="" id="seller1">
@@ -60,7 +59,7 @@
         <span>Продавец5</span>
       </div>
     </div>
-    <div class="filter-by-rating-in-category-detail">
+    <div class="filter-by-rating-in-category-detail" *ngIf="isCustomer">
       <h2>Рейтинг</h2>
       <div>
         <input type="checkbox" name="" id="rate2">
@@ -81,7 +80,7 @@
     </div>
   </div>
   <div class="category-detail-right">
-    <h2>1Market Магазин <img src="../../../assets/media/icons/right-arrow2.svg" alt=""> <span>{{category.name}}</span></h2>
+    <h2>1Market Магазин <img src="../../../assets/media/icons/right-arrow2.svg" alt=""> <span>{{currentCategory.name | titlecase}}</span></h2>
     <div>
       <app-product-list-in-category-detail>
 

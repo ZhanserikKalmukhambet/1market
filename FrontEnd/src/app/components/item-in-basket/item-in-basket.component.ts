@@ -7,15 +7,16 @@ import {Component, Input} from '@angular/core';
 })
 export class ItemInBasketComponent {
   @Input() item = {
-    "id": "9603ae0a-9ba7-436b-8895-d9f3a3542771",
-    "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-    "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-    "price": 205,
-    "rating": 4,
-    "count" : 4,
-    "main_image" : "sdf",
+    "id": "",
+    "name": "",
+    "description" : "",
+    "price": 0,
+    "rating": 0,
+    "count" : 0,
+    "main_image" : "",
     "is_active" : true,
-    "category" : "sd",
-    "subCategory" : "sd"
+    "category" : "",
+    "subCategory" : ""
+
   }
 }

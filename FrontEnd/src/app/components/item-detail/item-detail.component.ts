@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Product} from "../../models";
 
 @Component({
@@ -6,12 +6,18 @@ import {Product} from "../../models";
   templateUrl: './item-detail.component.html',
   styleUrls: ['./item-detail.component.css']
 })
-export class ItemDetailComponent {
+export class ItemDetailComponent implements OnInit{
   // @Input() product: Product  ;
   @Input() item !: Product
-  @Output() remove = new EventEmitter();
+  isSeller: boolean | undefined;
+  isCustomer: boolean | undefined;
   constructor(
   ) {}
+  ngOnInit() {
+    if(localStorage.getItem('isSeller')=='true') this.isSeller = true;
+    if(localStorage.getItem('isCustomer')=='true') this.isCustomer = true;
+  }
+
   // @Input() items: IProduct[];
   // constructor(
   //   private http: HttpClient,
@@ -25,14 +31,5 @@ export class ItemDetailComponent {
   //   });
   // }
   // @Input() product: Product;
-// <img src="{{product.main_image}}" alt="">-->
-//   <!--      <img src="assets/media/images/Products/Iphone14ProMax256GbPink.jpg" alt="">-->
-//   <!--      <a href="">{{product.name}}</a>-->
-// <!--      <div class="rating-in-stars">-->
-// <!--        <ngb-rating [max]="5" [(rate)]="product.rating" [readonly]="true"></ngb-rating>-->
-// <!--      </div>-->
-// <!--      <div class="price">-->
-// <!--        <p>Цена</p>-->
-// <!--        <span>{{product.price}}</span>-->
-// <!--      </div>-->
+
 }

@@ -1,4 +1,5 @@
 <!--<app-categories-nav></app-categories-nav>-->
+<app-header></app-header>
 <div class="basket-page">
   <h2>Корзина 1Market</h2>
   <div *ngIf="isEmpty">
@@ -7,7 +8,7 @@
     </div>
     <h2>Корзина пуста</h2>
     <span>Посмотрите предложения на странице товаров</span>
-    <a routerLink="/category" href=""><button>На страницу товаров</button></a>
+    <a href="/categories/1"><button>На страницу товаров</button></a>
   </div>
   <div *ngIf="!isEmpty">
     <app-item-in-basket

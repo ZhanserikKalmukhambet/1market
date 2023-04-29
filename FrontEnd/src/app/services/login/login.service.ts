@@ -10,17 +10,17 @@ export class LoginService {
 
 
   BASE_URL = 'http://localhost:8000'
-  static logged: boolean = false;
+
 
   constructor(private client: HttpClient) {
   }
 
-  login(username: string, password: string): Observable<AuthToken> {
+  logIn(username: string, password: string): Observable<AuthToken> {
     return this.client.post<AuthToken>(
-      `${this.BASE_URL}/api/login/`,
+      `${this.BASE_URL}/api/token`,
+      // http://127.0.0.1:8000/api/users/api/
       {username, password}
     )
   }
-
 
 }
