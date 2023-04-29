@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./basket.component.css']
 })
 export class BasketComponent {
-  isEmpty : boolean = true;
+  isEmpty : boolean = false;
   products = [
     {
       "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",

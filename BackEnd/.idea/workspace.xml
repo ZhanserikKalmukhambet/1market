@@ -4,18 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d4b4033-4758-4053-aa97-eb01fab5b3cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BackEnd.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imarket/Imarket/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/Imarket/settings.py" afterDir="false" />
+    <list default="true" id="75cfb4fc-dcdf-4c42-8e7d-3dd1eaf68455" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/orders/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/orders/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/products/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/shop/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/shop/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/users/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/users/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imarket/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imarket/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/app/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/app/components/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/app/pages/basket/basket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/app/pages/basket/basket.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,91 +34,43 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2OkGtoFigEZY3eRtAqgWAIdXSQe" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectId" id="2OuniV3XGdG0kTGJr3DZk1NHQTS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/KBTU/1market/BackEnd",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Desktop/coding/_1market_web_project/FrontEnd&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\KBTU\1market\BackEnd" />
-      <recent name="C:\KBTU\1market\BackEnd\Imarket" />
-    </key>
-  </component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4d4b4033-4758-4053-aa97-eb01fab5b3cc" name="Changes" comment="" />
-      <created>1682097383976</created>
+      <changelist id="75cfb4fc-dcdf-4c42-8e7d-3dd1eaf68455" name="Changes" comment="" />
+      <created>1682419461923</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682097383976</updated>
-      <workItem from="1682097384982" duration="8878000" />
-      <workItem from="1682137567078" duration="175000" />
-      <workItem from="1682138626342" duration="9447000" />
-      <workItem from="1682148134804" duration="899000" />
-      <workItem from="1682156307460" duration="695000" />
-      <workItem from="1682157024782" duration="3295000" />
-      <workItem from="1682273451533" duration="1210000" />
-      <workItem from="1682274666663" duration="348000" />
-      <workItem from="1682275023678" duration="1811000" />
-      <workItem from="1682276863154" duration="2114000" />
-      <workItem from="1682322370614" duration="1254000" />
-      <workItem from="1682324311211" duration="104000" />
-      <workItem from="1682324417917" duration="188000" />
-      <workItem from="1682324693689" duration="53000" />
-      <workItem from="1682325749377" duration="7486000" />
+      <updated>1682419461923</updated>
+      <workItem from="1682419463115" duration="6521000" />
+      <workItem from="1682505924444" duration="9167000" />
+      <workItem from="1682683652134" duration="14791000" />
+      <workItem from="1682742168415" duration="3626000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
