@@ -109,7 +109,10 @@ Thumbs.db
 !.editorconfig
 !.phpcs.xml.dist
 .idea
-
+*.idea
+*.log
+*.pot
+*.pyc
 my-first-env/
 second-env/
 env/
