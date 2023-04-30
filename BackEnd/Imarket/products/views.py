@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from .models import Category, Product, ProductImage
-from .serializers import ProductSerializer, CategorySerializer, ProductImageSerializer
+from .models import Category, Product, ProductImage, SubCategory
+from .serializers import ProductSerializer, CategorySerializer, ProductImageSerializer, SubCategorySerializer
 
 
 class ProductImageViewSet(viewsets.ModelViewSet):
@@ -20,19 +20,31 @@ class CategoryViewSet(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
 
 
+class SubCategoryViewSet(viewsets.ModelViewSet):
+    queryset = SubCategory.objects.all()
+    serializer_class = SubCategorySerializer
+
+    def get_subcategories_of_category(self, req, category_id):
+        queryset = SubCategory.objects.all().filter(category_id=category_id)
+        serializer = SubCategorySerializer(queryset, many=True)
+        return Response(serializer.data)
+
+
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
     def get_category_products(self, request, category_id):
-        queryset = Product.objects.all().filter(category_id=category_id)
-        serializer = CategorySerializer(queryset, many=True)
+        subcategories = SubCategory.objects.all().filter(category_id=category_id)
+        queryset = Product.objects.filter(subcategory__in=subcategories)
+
+        serializer = ProductSerializer(queryset, many=True)
 
         return Response(serializer.data)
 
     def get_products_min_rating(self, request, min):
         queryset = Product.objects.all().filter(rating__gte=min)
-        serializer = CategorySerializer(queryset, many=True)
+        serializer = ProductSerializer(queryset, many=True)
 
         return Response(serializer.data)
 
@@ -48,3 +60,10 @@ class ProductViewSet(viewsets.ModelViewSet):
         serializer = ProductSerializer(queryset, many=True)
 
         return Response(serializer.data)
+
+    def get_subcategory_products(self, req, category_id, subcat_id):
+        queryset = Product.objects.all().filter(subcategory_id=subcat_id)
+        serializer = ProductSerializer(queryset, many=True)
+
+        return Response(serializer.data)
+
