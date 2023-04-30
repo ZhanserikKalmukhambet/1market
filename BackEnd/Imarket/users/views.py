@@ -17,6 +17,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 random.seed(time.time())
 
+from orders.models import Order
 
 @csrf_exempt
 def send_to_email(request):
@@ -65,6 +66,11 @@ class RegisterView(APIView):
         serializer = UserSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+
+        new_order = Order(serializer.data["id"])
+        new_order.save()
+        print(f"\n\n\n{new_order}\n\n\n")
+
         return Response(serializer.data)
 
 

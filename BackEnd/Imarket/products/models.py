@@ -29,7 +29,8 @@ class Product(models.Model):
     main_image = models.ImageField(upload_to='images/%Y/%m/%d', null=True, blank=True, verbose_name='Product Main Image')
     is_active = models.BooleanField(default=True, verbose_name='Is Active ?')
     description = models.TextField(null=True, verbose_name='Description')
-    rating = models.FloatField(null=True, validators=[validate_rating])
+    rating = models.FloatField(null=True, validators=[validate_rating], default=5.0)
+    rate_cnt = models.IntegerField(null=True, default=1)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, related_name='products')
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -38,7 +39,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
-        ordering = ('-rating', )
+
 
     def __str__(self):
         return f"id: {self.pk}, {self.name} ({self.category}), rating: {self.rating}"

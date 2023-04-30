@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.response import Response
 
 from .models import Category, Product, ProductImage
@@ -29,3 +29,9 @@ class ProductViewSet(viewsets.ModelViewSet):
         serializer = CategorySerializer(queryset, many=True)
         return Response(serializer.data)
 
+    def put_rating_to_product(self, request, product_id, new_rating) -> int:
+        product = Product.objects.get(id=product_id)
+        product.rate_cnt = product.rate_cnt + 1
+        product.rating = (product.rating + new_rating) / (product.rate_cnt)
+        product.save()
+        return Response(data=product.rating, status=status.HTTP_200_OK)

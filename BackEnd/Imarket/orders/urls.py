@@ -9,7 +9,19 @@ urlpatterns = [
          OrderItemViewSet.as_view({'get': 'get_order_items_in_cart'}), name='get products in cart'),
     path('users/<int:user_id>/orders/',
          OrderItemViewSet.as_view({'get': 'get_user_orders'}), name='get products in cart'),
+    path('orders/<int:order_id>/orderitems/',
+             OrderItemViewSet.as_view({'get': 'get_user_order_orderitems'}), name='get orderitems in exact order'),
+
+
+
+    path('orders/<int:order_id>/purchase/',
+         OrderViewSet.as_view({'put': 'purchase_orderitems_in_order'}), name='purchase cart'),
+    path('orderitems/<int:orderitem_id>/',
+         OrderItemViewSet.as_view({'delete': 'delete_order_item_from_order'}), name='delete order item'),
+    path('orders/',
+         OrderItemViewSet.as_view({'post': 'add_order_item_to_order'}), name='add order item'),
 ]
+
 
 r = routers.DefaultRouter()
 
