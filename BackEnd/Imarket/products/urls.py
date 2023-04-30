@@ -8,8 +8,12 @@ urlpatterns = [
          ProductViewSet.as_view({'get': 'get_category_products'}), name='list of category products'),
     path('products/rating/<int:min>/',
          ProductViewSet.as_view({'get': 'get_products_min_rating'}), name='products with minimum rate'),
-
-
+    path('products/<int:product_id>/product_images/',
+         ProductImageViewSet.as_view({'get': 'product_images_of_product'}), name='product images of product'),
+    path('popular_products/',
+         ProductViewSet.as_view({'get': 'get_popular_products'}), name='sorted in desc by rating'),
+    path('products/name/',
+         ProductViewSet.as_view({'post': 'search_by_name'}), name='search product by name')
 ]
 
 r = routers.DefaultRouter()
