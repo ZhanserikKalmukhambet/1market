@@ -6,7 +6,6 @@ from shop.models import WarehouseItem
 from users.choices import Role
 
 
-
 class Order(models.Model):
     user = models.ForeignKey(User,
                                 on_delete=models.CASCADE,

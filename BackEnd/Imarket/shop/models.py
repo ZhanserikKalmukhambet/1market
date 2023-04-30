@@ -41,6 +41,7 @@ class WarehouseItem(models.Model):
     shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.IntegerField()
+
     class Meta:
         verbose_name = 'warehouse item'
         verbose_name_plural = 'warehouse items'
