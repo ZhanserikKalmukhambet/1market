@@ -6,9 +6,8 @@ from shop.models import WarehouseItem
 from users.choices import Role
 
 
-
 class Order(models.Model):
-    user = models.OneToOneField(User,
+    user = models.ForeignKey(User,
                                 on_delete=models.CASCADE,
                                 null=True,
                                 limit_choices_to={'user_type': Role.CUSTOMER})
