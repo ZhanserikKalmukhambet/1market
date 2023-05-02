@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from shop.models import Shop
 from .models import Category, Product, ProductImage, SubCategory
 from .serializers import ProductSerializer, CategorySerializer, ProductImageSerializer, SubCategorySerializer
+from users.permissions import IsSeller, IsCustomer
 
 
 class ProductImageViewSet(viewsets.ModelViewSet):
@@ -19,6 +20,7 @@ class ProductImageViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    permission_classes = (IsSeller, )
 
 
 class SubCategoryViewSet(viewsets.ModelViewSet):

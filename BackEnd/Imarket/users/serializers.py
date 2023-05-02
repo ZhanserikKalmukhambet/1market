@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
             'password': {'write_only': True}  # for hiding password
         }
 
-    def create(self, validated_data):
+    def create(self, validated_data):  # кэширование
         password = validated_data.pop('password', None)
         instance = self.Meta.model(**validated_data)
 
