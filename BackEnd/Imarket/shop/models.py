@@ -14,7 +14,8 @@ def validate_rating(value):
 
 class Shop(models.Model):
     name = models.CharField(max_length=255, unique=True, verbose_name='Shop')
-    rating = models.FloatField(default=0, verbose_name='Rating', validators=[validate_rating, ])
+    rating = models.FloatField(default=5, verbose_name='Rating', validators=[validate_rating, ])
+    rate_cnt = models.IntegerField(null=True, default=1)
     address = models.CharField(max_length=255, verbose_name='Shop address', unique=True)
 
     seller = models.ForeignKey(
@@ -33,7 +34,7 @@ class Shop(models.Model):
         ordering = ('-rating', 'name')
 
     def __str__(self):
-        return f'{self.name} - ({self.rating})'
+        return f'{self.name} - rating: ({self.rating})'
 
 
 class WarehouseItem(models.Model):
