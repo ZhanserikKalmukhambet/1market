@@ -9,10 +9,10 @@ class UserSerializer(serializers.ModelSerializer):
 
         fields = ['id', 'first_name', 'last_name', 'username', 'email', 'user_type', 'phone_number', 'password']
         extra_kwargs = {
-            'password': {'write_only': True}  # чтобы пароль был невиден
+            'password': {'write_only': True}  # for hiding password
         }
 
-    def create(self, validated_data):
+    def create(self, validated_data):  # кэширование
         password = validated_data.pop('password', None)
         instance = self.Meta.model(**validated_data)
 

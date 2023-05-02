@@ -4,7 +4,6 @@ import string
 import time
 
 import jwt
-from django.core.exceptions import ValidationError
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -14,10 +13,10 @@ from .models import User
 from .serializers import UserSerializer
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
+from orders.models import Order
 
 random.seed(time.time())
 
-from orders.models import Order
 
 @csrf_exempt
 def send_to_email(request):
@@ -54,14 +53,13 @@ class UserView(APIView):
 
 
 class RegisterView(APIView):
-    random.seed(time.time())
     random_gen_code = ''.join(random.choice(string.digits) for i in range(6))
 
     def post(self, request):
-        code = request['code']
+        # code = request['code']
 
-        if code != RegisterView.random_gen_code:
-            raise ValidationError("Verify code doesn't satisfy")
+        # if code != RegisterView.random_gen_code:
+        #     raise ValidationError("Verify code doesn't satisfy")
 
         serializer = UserSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -69,7 +67,6 @@ class RegisterView(APIView):
 
         new_order = Order(serializer.data["id"])
         new_order.save()
-        print(f"\n\n\n{new_order}\n\n\n")
 
         return Response(serializer.data)
 
