@@ -21,6 +21,7 @@ const routes: Routes = [
   {path: 'categories/:id', component: CategoryDetailComponent},
   {path: 'categories/1/products/1', component: ItemCartComponent},
   {path: 'categories/1/subcategories/1', component: SubCategoryDetailComponent},
+  {path: 'categories/1/subcategories/1/products/1', component: ItemCartComponent},
   {path: 'myOrders', component: MyOrdersComponent},
   {path: 'myProducts', component: SellerProductsComponent},
   {path: '', redirectTo: 'shop', pathMatch: 'full'}

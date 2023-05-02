@@ -17,10 +17,8 @@ export class LoginService {
 
   logIn(username: string, password: string): Observable<AuthToken> {
     return this.client.post<AuthToken>(
-      `${this.BASE_URL}/api/token`,
-      // http://127.0.0.1:8000/api/users/api/
+      `${this.BASE_URL}/api/token/`,
       {username, password}
     )
   }
-
 }
