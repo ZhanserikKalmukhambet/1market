@@ -9,20 +9,19 @@ from .models import Order, OrderItem
 
 from .serializers import OrderSerializer, OrderItemSerializer
 
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
-    def purchase_orderitems_in_order(self, request, order_id): # aka: purchase_orderitems_in_cart
+
+    def purchase_orderitems_in_order(self, request, order_id):  # aka: purchase_orderitems_in_cart
         try:
             last_order = Order.objects.get(id=order_id)
         except Order.DoesNotExist as e:
             return Response({'Error in getting last_order': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
         serializer = OrderSerializer(instance=last_order, data=request.data)
-        if (serializer.is_valid()):
+        if serializer.is_valid():
             serializer.save()
 
             # print(f"\n\n\n{serializer.data}\n\n\n")
@@ -33,7 +32,6 @@ class OrderViewSet(viewsets.ModelViewSet):
 
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 
 class OrderItemViewSet(viewsets.ModelViewSet):
@@ -56,8 +54,7 @@ class OrderItemViewSet(viewsets.ModelViewSet):
         serializer = OrderItemSerializer(queryset, many=True)
         return Response(serializer.data)
 
-
-    def delete_order_item_from_order(self, request, orderitem_id): # aka: delete_orderitem_from_cart
+    def delete_order_item_from_order(self, request, orderitem_id):  # aka: delete_orderitem_from_cart
         try:
             deleting_order_item = OrderItem.objects.get(id=orderitem_id)
         except OrderItem.DoesNotExist as e:
@@ -69,7 +66,7 @@ class OrderItemViewSet(viewsets.ModelViewSet):
         deleting_order_item.delete()
         return Response({'message': 'deleted'}, status=status.HTTP_204_NO_CONTENT)
 
-    def add_order_item_to_order(self, request): # aka: add_product_to_cart
+    def add_order_item_to_order(self, request):  # aka: add_product_to_cart
         serializer = OrderItemSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -83,5 +80,3 @@ class OrderItemViewSet(viewsets.ModelViewSet):
             return Response(serializer.data)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
