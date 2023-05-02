@@ -26,7 +26,6 @@ const routes: Routes = [
   {path: 'myProducts', component: SellerProductsComponent},
   {path: '', redirectTo: 'shop', pathMatch: 'full'}
   // {path: 'slider', component: CategoriesSliderComponent},
-  // lrfh
 
 ];
 

@@ -41,7 +41,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=30, default="")
     phone_number = models.CharField(max_length=15)
     birth_date = models.DateField(null=True, blank=True)
-    user_type = models.CharField(max_length=10, choices=Role.choices)
+    user_type = models.CharField(max_length=10, choices=Role.choices, default=Role.CUSTOMER)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -53,4 +53,4 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = 'Users'
 
     def __str__(self):
-        return f"user {self.pk}"
+        return f"user_id: {self.pk}, username: {self.username}"

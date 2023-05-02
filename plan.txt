@@ -1,0 +1,16 @@
+1) Дизайн сайта (фронт) 
+2) Дизайн объектов (ооп) --
+3) готовить апишки (бэкендеры)
+4) коннектить фронт + бэк
+5) дальше сделать другие фитчы
+
+Product - parent 
+Comp, Phone, Bike
+
+1) is it Right?
+2) will we have enough time to finish 100%
+3) why do we need category? 
+4) 
+
+5 apr - > lect
+6 apr - >bsui
