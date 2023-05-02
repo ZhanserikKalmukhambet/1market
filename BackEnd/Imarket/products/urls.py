@@ -12,6 +12,9 @@ urlpatterns = [
          ProductViewSet.as_view({'get': 'get_subcategory_products'})),
     path('products/rating/<int:min>/',
          ProductViewSet.as_view({'get': 'get_products_min_rating'}), name='products with minimum rate'),
+    path('products/<int:product_id>/put_rating/<int:new_rating>/',
+         ProductViewSet.as_view({'get': 'put_rating_to_product'}), name='rate product'),
+
     path('products/<int:product_id>/product_images/',
          ProductImageViewSet.as_view({'get': 'product_images_of_product'}), name='product images of product'),
     path('popular_products/',

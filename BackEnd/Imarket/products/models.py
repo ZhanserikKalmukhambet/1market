@@ -38,7 +38,8 @@ class Product(models.Model):
     main_image = models.ImageField(upload_to='images/%Y/%m/%d', null=True, blank=True, verbose_name='Product Main Image')
     is_active = models.BooleanField(default=True, verbose_name='Is Active ?')
     description = models.TextField(null=True, verbose_name='Description')
-    rating = models.FloatField(null=True, validators=[validate_rating], default=0)
+    rating = models.FloatField(null=True, validators=[validate_rating], default=5.0)
+    rate_cnt = models.IntegerField(null=True, default=1)
     subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name='products')
 
     created_at = models.DateTimeField(auto_now_add=True)
