@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-import {Category, CategoryBack, SubCategory, SubCategoryBack} from "../../models";
+import {CategoryBack,SubCategoryBack} from "../../models";
 import {CategoryService} from "../../services/category/category.service";
 import {ActivatedRoute} from "@angular/router";
 
@@ -201,7 +201,7 @@ export class SubCategoryDetailComponent implements OnInit {
 
   currentSubCategory: SubCategoryBack ;
 
-  categories : Category[]  ;
+  categories : CategoryBack[]  ;
 
   currentCategory: CategoryBack ;
   constructor(private categoryService : CategoryService, private route: ActivatedRoute) {
@@ -210,23 +210,11 @@ export class SubCategoryDetailComponent implements OnInit {
     this.currentCategory = {} as CategoryBack
   }
   getCategories(){
-    this.categoryService.getCategories().subscribe((data: any[]) => {
-      data.forEach(cat => {
-        // @ts-ignore
-        const category = new Category(cat.id, cat.name, []);
-        this.categoryService.getSubcategoriesOfCategory(cat.id).subscribe((subCatData: any[]) => {
-          // @ts-ignore
-          category.subCategories = subCatData.map(subCat => new SubCategory(subCat.id, subCat.name));
-          // @ts-ignore
-          this.categories.push(category);
-        });
-      });
+    this.categoryService.getCategories().subscribe((data) => {
+      this.categories = data;
     });
   }
 
-
-
-  //
   ngOnInit() {
     this.route.paramMap.subscribe((params) =>{
       const id = Number(params.get('id'));

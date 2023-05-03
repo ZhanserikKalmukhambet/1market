@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Category, CategoryBack, Product, SubCategory, SubCategoryBack} from "../../models";
+import { CategoryBack, Product,  SubCategoryBack} from "../../models";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -19,7 +19,7 @@ export class CategoryService {
   }
   getSubcategoriesOfCategory(category_id: number){
     return this.client.get<SubCategoryBack[]>(
-      "${this.BASE_URL}/api/categories/${category_id}/subcategories/"
+      `${this.BASE_URL}/api/categories/${category_id}/subcategories/`
     )
   }
   getProducts(category_id: number): Observable<Product[]> {

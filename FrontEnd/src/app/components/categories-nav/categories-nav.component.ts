@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Category, MyJwtPayload, SubCategory} from "../../models";
+import {CategoryBack, MyJwtPayload, SubCategoryBack} from "../../models";
 import {LoginService} from "../../services/login/login.service";
 import {Router} from "@angular/router";
 import jwt_decode from "jwt-decode";
@@ -168,31 +168,34 @@ export class CategoriesNavComponent implements OnInit{
   //     ]
   //   }
   // ]
-  categories : Category[] | undefined ;
-  // subCategories : SubCategory[] ;
+  categories : CategoryBack[]  ;
+  // subCategories : SubCategoryBack[] ;
   // static categories: Category[];
+  categoryToSubCategoriesMap : Map<CategoryBack, SubCategoryBack[]>;
+
   constructor(private categoryService: CategoryService){
+    this.categories = [];
+    this.categoryToSubCategoriesMap = new Map<CategoryBack, SubCategoryBack[]>();
   }
-  getCategories(){
-    this.categoryService.getCategories().subscribe((data: any[]) => {
-      data.forEach(cat => {
-        // @ts-ignore
-        const category = new Category(cat.id, cat.name, []);
-        this.categoryService.getSubcategoriesOfCategory(cat.id).subscribe((subCatData: any[]) => {
-          // @ts-ignore
-          category.subCategories = subCatData.map(subCat => new SubCategory(subCat.id, subCat.name));
-          // @ts-ignore
-          this.categories.push(category);
-        });
+  getCategories() {
+    this.categoryService.getCategories().subscribe((data: CategoryBack[]) => {
+      this.categories = data;
+      this.categories.forEach((category) => {
+        this.categoryService
+          .getSubcategoriesOfCategory(category.id)
+          .subscribe((subcategories: SubCategoryBack[]) => {
+            this.categoryToSubCategoriesMap.set(category, subcategories);
+          });
       });
     });
+    console.log(this.categoryToSubCategoriesMap)
   }
   getSubcategoriesOfCategory(){
-
+    this.categoryService
   }
   ngOnInit() {
     this.getCategories()
-    console.log(this.getCategories())
+
   }
 
 }

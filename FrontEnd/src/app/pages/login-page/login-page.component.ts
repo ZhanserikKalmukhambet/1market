@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {first} from "rxjs";
 import { LoginService } from "../../services/login/login.service";
-import {MyJwtPayload, Person} from "../../models";
+import {AuthToken, MyJwtPayload, Person} from "../../models";
 import jwt_decode, { JwtPayload } from 'jwt-decode';
 
 @Component({
@@ -13,7 +13,7 @@ import jwt_decode, { JwtPayload } from 'jwt-decode';
 })
 export class LoginPageComponent implements OnInit{
 
-  person: Person = {username: '', password: ''};
+  person: Person = {email: '', password: ''};
   loginError: boolean | undefined;
 
   constructor(private loginService: LoginService, private router: Router){
@@ -27,11 +27,16 @@ export class LoginPageComponent implements OnInit{
     this.loginError = true;
   }
   login() {
-    this.loginService.logIn(this.person.username, this.person.password).subscribe((data) => {
-      // @ts-ignore
-      localStorage.setItem('token', data);
-      // @ts-ignore
-      const decoded: MyJwtPayload = jwt_decode(data);
+    this.loginService.logIn(this.person.email, this.person.password).subscribe((data) => {
+      // const token = data.get("access");
+      localStorage.setItem('token', data.access);
+      console.log(data.access)
+
+      const decoded: MyJwtPayload = jwt_decode(data.access);
+
+      console.log(decoded.id)
+      console.log(decoded.user_type)
+
       localStorage.setItem('id', String(decoded.id));
       localStorage.setItem('user_type', decoded.user_type)
       this.router.navigate([`/`]);

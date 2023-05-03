@@ -48,33 +48,19 @@ export interface nonAuthUser{
 }
 
 export interface AuthToken {
-  token: string;
+  access: string;
 }
 
 export interface MyJwtPayload {
   id: number;
   user_type: string
 }
-// export interface Category {
-//   id : number;
-//   name : string;
-//   image : string
-//   // subCategories : SubCategory[];
-// }
+
 export interface Person {
-  username : string;
+  email : string;
   password : string;
 }
-// export interface SubCategory {
-//   id : number
-//   name: string;
-//   category_id : number
-// }
-export interface SubCategory {
-  id : number
-  name: string;
-  // category_id : number
-}
+
 
 export interface CategoryBack {
   id : number;
@@ -86,23 +72,17 @@ export interface SubCategoryBack {
   name : string;
   category_id : number
 }
-export interface Category {
-  id : number;
-  name : string;
-  // image : string
-  subCategories : SubCategory[];
-}
+
 export interface Product {
   id: string;
   name : string;
   main_image : string;
   is_active : boolean;
-  price : number;
   description : string;
-  count : number;
   rating : number;
-  category : string;
-  subCategory : string;
+  rate_cnt: number;
+  subCategory: SubCategoryBack;
+
 }
 
 

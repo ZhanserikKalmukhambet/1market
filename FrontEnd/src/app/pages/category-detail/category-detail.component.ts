@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-import {Category, CategoryBack, Product, SubCategory} from "../../models";
+import {CategoryBack, Product} from "../../models";
 import {ActivatedRoute} from "@angular/router";
 import {CategoryService} from "../../services/category/category.service";
 import {CategoriesNavComponent} from "../../components/categories-nav/categories-nav.component";
@@ -19,165 +19,6 @@ import {CategoriesNavComponent} from "../../components/categories-nav/categories
 // category
 export class CategoryDetailComponent implements OnInit{
 
-  // categories : Category[] = [
-  //
-  //   {
-  //     name : "ТЕЛЕФОНЫ И ГАДЖЕТЫ",
-  //     subCategories :  [
-  //       {
-  //         name : "APPLE"
-  //       },
-  //       {
-  //         name : "SAMSUNG"
-  //       },
-  //       {
-  //         name : "NOKIA"
-  //       },
-  //       {
-  //         name : "XIAOMI"
-  //       },
-  //       {
-  //         name : "HUAWEI"
-  //       },
-  //       {
-  //         name : "LG"
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name : "БЫТОВАЯ ТЕХНИКА",
-  //     subCategories :  [
-  //       {
-  //         name : "КОНДИЦИОНЕРЫ"
-  //       },
-  //       {
-  //         name : "СУШИЛКА ДЛЯ БЕЛЬЯ"
-  //       },
-  //       {
-  //         name : "СУШИЛЬНЫЕ ШКАФЫ"
-  //       },
-  //       {
-  //         name : "МОРОЗИЛЬНЫЕ КАМЕРЫ"
-  //       },
-  //       {
-  //         name : "ВИННЫЕ ШКАФЫ"
-  //       },
-  //       {
-  //         name : "КУХОННЫЕ ПЛИТЫ"
-  //       },
-  //       {
-  //         name : "ХОЛОДИЬНИКИ"
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name : "ТВ, АУДИО, ВИДЕО",
-  //     subCategories :  [
-  //       {
-  //         name : "НАУШНИКИ"
-  //       },
-  //       {
-  //         name : "АУДИОТЕХНИКА"
-  //       },
-  //       {
-  //         name : "ВИДЕОТЕХНИКА"
-  //       },
-  //       {
-  //         name : "ТЕЛЕВИЗОРЫ"
-  //       },
-  //       {
-  //         name : "ГАРНИТУРЫ"
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name : "КОМПЬЮТЕРЫ",
-  //     subCategories :  [
-  //       {
-  //         name : "НАСТОЛЬНЫЕ ПК"
-  //       },
-  //       {
-  //         name : "НОУТБУКИ"
-  //       },
-  //       {
-  //         name : "АКСЕССУАРЫ"
-  //       },
-  //       {
-  //         name : "КОМПЛЕКТУЮЩИЕ"
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name : "МЕБЕЛЬ",
-  //     subCategories :  [
-  //       {
-  //         name : "СПАЛЬНЯ"
-  //       },
-  //       {
-  //         name : "КУХНЯ"
-  //       },
-  //       {
-  //         name : "ГОСТИНАЯ"
-  //       },
-  //       {
-  //         name : "ПРИХОЖАЯ"
-  //       },
-  //       {
-  //         name : "ДЕТСКАЯ КОМНАТА"
-  //       },
-  //       {
-  //         name : "ОФИС И КАБИНЕТ"
-  //       },
-  //       {
-  //         name : "ВАННАЯ КОМНАТА"
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name : "ПРОДУКТЫ ПИТАНИЯ",
-  //     subCategories :  [
-  //       {
-  //         name : "МОЛОЧНЫЕ ПРОДУКТЫ"
-  //       },
-  //       {
-  //         name : "СЛАДОСТИ И ВЫПЕЧКА"
-  //       },
-  //       {
-  //         name : "ОВОЩИ И ФРУКТЫ"
-  //       },
-  //       {
-  //         name : "КРУПЫ, ХЛОПЬЯ"
-  //       },
-  //       {
-  //         name : "МАСЛА, СОУСЫ"
-  //       },
-  //       {
-  //         name : "КОНСЕРВАЦИЯ"
-  //       },
-  //       {
-  //         name : "КОЛБАСЫ, СОСИСКИ"
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     name : "ДЕТСКИЕ ТОВАРЫ",
-  //     subCategories :  [
-  //       {
-  //         name : "ДЛЯ МАЛЫШКА И МАМЫ"
-  //       },
-  //       {
-  //         name : "ИГРУШКИ"
-  //       },
-  //       {
-  //         name : "ДЕТСКОЕ ПИТАНИЕ"
-  //       },
-  //       {
-  //         name : "ИГРОВАЯ ПЛОЩАДКА"
-  //       }
-  //     ]
-  //   }
-  // ]
-
   r1 = 1;
   r2 = 2;
   r3 = 3;
@@ -196,7 +37,7 @@ export class CategoryDetailComponent implements OnInit{
   isSeller: boolean | undefined;
   isCustomer: boolean | undefined;
 
-  categories : Category[]  ;
+  categories : CategoryBack[]  ;
 
   currentCategory: CategoryBack ;
   constructor(private categoryService : CategoryService, private route : ActivatedRoute) {
@@ -204,19 +45,11 @@ export class CategoryDetailComponent implements OnInit{
     this.categories = [];
   }
   getCategories(){
-    this.categoryService.getCategories().subscribe((data: any[]) => {
-      data.forEach(cat => {
-        // @ts-ignore
-        const category = new Category(cat.id, cat.name, []);
-        this.categoryService.getSubcategoriesOfCategory(cat.id).subscribe((subCatData: any[]) => {
-          // @ts-ignore
-          category.subCategories = subCatData.map(subCat => new SubCategory(subCat.id, subCat.name));
-          // @ts-ignore
-          this.categories.push(category);
-        });
-      });
+    this.categoryService.getCategories().subscribe((data) => {
+      this.categories = data
     });
   }
+
 
 
   ngOnInit() {
