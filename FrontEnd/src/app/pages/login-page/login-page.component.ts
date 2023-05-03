@@ -34,10 +34,10 @@ export class LoginPageComponent implements OnInit{
 
       const decoded: MyJwtPayload = jwt_decode(data.access);
 
-      console.log(decoded.id)
+      console.log(decoded.user_id)
       console.log(decoded.user_type)
 
-      localStorage.setItem('id', String(decoded.id));
+      localStorage.setItem('id', String(decoded.user_id));
       localStorage.setItem('user_type', decoded.user_type)
       this.router.navigate([`/`]);
     });

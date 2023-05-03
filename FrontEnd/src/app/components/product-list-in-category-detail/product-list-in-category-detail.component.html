@@ -2,8 +2,7 @@
   <div class="items" *ngIf="products">
     <app-item-detail
       *ngFor="let item of products "
-
+      [item]="item"
     ></app-item-detail>
-<!--     <p *ngIf="items.length == 0">There's no items...</p> -->
-  </div>
+]  </div>
 </div>

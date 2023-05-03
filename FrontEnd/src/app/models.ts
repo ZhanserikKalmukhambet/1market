@@ -52,7 +52,7 @@ export interface AuthToken {
 }
 
 export interface MyJwtPayload {
-  id: number;
+  user_id: number;
   user_type: string
 }
 
@@ -80,9 +80,7 @@ export interface Product {
   is_active : boolean;
   description : string;
   rating : number;
-  rate_cnt: number;
-  subCategory: SubCategoryBack;
-
+  subCategory_id: number;
 }
 
 

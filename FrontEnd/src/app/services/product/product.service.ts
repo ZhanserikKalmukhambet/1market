@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Order, Product, SubCategory} from "../../models";
+import {Order, Product, SubCategoryBack} from "../../models";
 @Injectable({
   providedIn: 'root'
 })
@@ -20,8 +20,8 @@ export class ProductService {
   // ProductViewSet.as_view({'get': 'get_category_products'}), name='list of category products'),
 
 
-  getCategorySubcategories(catid: number): Observable<SubCategory[]> {
-    return this.client.get<SubCategory[]> (
+  getCategorySubcategories(catid: number): Observable<SubCategoryBack[]> {
+    return this.client.get<SubCategoryBack[]> (
       `${this.BASE_URL}/categories/${catid}/subcategories/`
     )
   }

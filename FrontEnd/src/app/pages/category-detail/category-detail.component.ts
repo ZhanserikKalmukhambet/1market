@@ -3,6 +3,7 @@ import {CategoryBack, Product} from "../../models";
 import {ActivatedRoute} from "@angular/router";
 import {CategoryService} from "../../services/category/category.service";
 import {CategoriesNavComponent} from "../../components/categories-nav/categories-nav.component";
+import {ProductService} from "../../services/product/product.service";
 
 @Component({
   selector: 'app-category-detail',
@@ -26,23 +27,18 @@ export class CategoryDetailComponent implements OnInit{
   r5 = 5;
 
   categoryName : string = "";
-  // products: Product[] = [];
-  // category : Category;
+  products: Product[] ;
 
-
-    // constructor(private categoryService: CategoryService, private route : ActivatedRoute) {
-    //   // this.category = {} as Category
-    //
-    // }
   isSeller: boolean | undefined;
   isCustomer: boolean | undefined;
 
   categories : CategoryBack[]  ;
 
   currentCategory: CategoryBack ;
-  constructor(private categoryService : CategoryService, private route : ActivatedRoute) {
+  constructor(private categoryService : CategoryService, private route : ActivatedRoute, private productService : ProductService) {
     this.currentCategory = {} as CategoryBack;
     this.categories = [];
+    this.products = [];
   }
   getCategories(){
     this.categoryService.getCategories().subscribe((data) => {
@@ -59,11 +55,17 @@ export class CategoryDetailComponent implements OnInit{
       this.categoryService.getCategory(id).subscribe((category) =>{
         this.currentCategory = category;
       })
+
+      this.productService.getCategoryProducts(id).subscribe((productss) => {
+        console.log(productss)
+        this.products = productss;
+        console.log(this.products)
+      });
+      // console.log(id)
+
     })
 
     this.getCategories()
-    // @ts-ignore
-    // this.currentCategory = this.categories[3]
     if(localStorage.getItem('isSeller') == 'true') this.isSeller = true;
     if(localStorage.getItem('isCustomer') == 'true') this.isCustomer = true;
   }
