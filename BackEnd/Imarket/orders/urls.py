@@ -8,9 +8,9 @@ urlpatterns = [
     path('users/<int:user_id>/cart_order_items/',
          OrderItemViewSet.as_view({'get': 'get_order_items_in_cart'}), name='get products in cart'),
     path('users/<int:user_id>/orders/',
-         OrderItemViewSet.as_view({'get': 'get_user_orders'}), name='get products in cart'),
+         OrderItemViewSet.as_view({'get': 'get_user_orders'}), name='get orders'),
     path('orders/<int:order_id>/orderitems/',
-             OrderItemViewSet.as_view({'get': 'get_user_order_orderitems'}), name='get orderitems in exact order'),
+         OrderItemViewSet.as_view({'get': 'get_user_order_orderitems'}), name='get orderitems in exact order'),
 
 
 

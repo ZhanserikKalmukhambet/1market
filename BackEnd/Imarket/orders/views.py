@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
@@ -8,11 +6,13 @@ from shop.models import WarehouseItem
 from .models import Order, OrderItem
 
 from .serializers import OrderSerializer, OrderItemSerializer
+from users.permissions import IsAdminOrReadOnly, IsCustomer
 
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+    permission_classes = (IsAdminOrReadOnly, IsCustomer)
 
     def purchase_orderitems_in_order(self, request, order_id):  # aka: purchase_orderitems_in_cart
         try:
@@ -24,11 +24,8 @@ class OrderViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             serializer.save()
 
-            # print(f"\n\n\n{serializer.data}\n\n\n")
             new_order = Order(user_id=serializer.data["user"])
             new_order.save()
-
-            # print(f"\n\n\n{new_order}\n\n\n")
 
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -37,6 +34,7 @@ class OrderViewSet(viewsets.ModelViewSet):
 class OrderItemViewSet(viewsets.ModelViewSet):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
+    permission_classes = (IsAdminOrReadOnly, IsCustomer)
 
     def get_order_items_in_cart(self, request, user_id):
         queryset = OrderItem.objects.filter(order__user_id=user_id)
