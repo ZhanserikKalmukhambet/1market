@@ -1,6 +1,7 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.response import Response
 
+from users.permissions import IsOwner
 from .models import Shop, WarehouseItem
 from .serializers import ShopSerializer, WarehouseItemSerializer
 
@@ -8,6 +9,14 @@ from .serializers import ShopSerializer, WarehouseItemSerializer
 class ShopViewSet(viewsets.ModelViewSet):
     queryset = Shop.objects.all()
     serializer_class = ShopSerializer
+    permission_classes = (IsOwner, )
+
+    def put_rating_to_shop(self, request, shop_id, new_rating):
+        shop = Shop.objects.get(id=shop_id)
+        shop.rate_cnt = shop.rate_cnt + 1
+        shop.rating = (shop.rating + new_rating) / shop.rate_cnt
+        shop.save()
+        return Response(data=shop.rating, status=status.HTTP_200_OK)
 
 
 class WarehouseViewSet(viewsets.ModelViewSet):
@@ -23,3 +32,5 @@ class WarehouseViewSet(viewsets.ModelViewSet):
         queryset = WarehouseItem.objects.filter(shop_id=shop_id)
         serializer = WarehouseItemSerializer(queryset, many=True)
         return Response(serializer.data)
+
+
