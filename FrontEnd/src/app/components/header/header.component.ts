@@ -8,18 +8,23 @@ import {LoginPageComponent} from "../../pages/login-page/login-page.component";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
-  logged: boolean | undefined;
+  logged: boolean | undefined
   isCustomer: boolean | undefined;
   isSeller: boolean | undefined;
   constructor(public loginService: LoginService) {
-    if(localStorage.getItem('logged')=='true') this.logged = true;
-    if(localStorage.getItem('isCustomer')=='true') this.isCustomer = true;
-    if(localStorage.getItem('isSeller')=='true') this.isSeller = true;
+    if(localStorage.getItem('user_type')=='Seller') {
+      this.isSeller = true;
+      this.logged = true;
+    }
+    if(localStorage.getItem('user_type')=='Customer') {
+      this.isCustomer = true;
+      this.logged = true;
+    }
   }
 
   ngOnInit(): void {
 
-    console.log('logged: ', this.logged, 'seller: ', this.isSeller, 'customer: ', this.isCustomer)
+    // console.log('logged: ', this.logged, 'seller: ', this.isSeller, 'customer: ', this.isCustomer)
   }
 
 }

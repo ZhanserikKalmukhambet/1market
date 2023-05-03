@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a07766a-c2d9-4f78-878b-eef1181d6788" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BackEnd/Imarket/shop/migrations/0004_shop_rate_cnt_alter_shop_rating.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/item-cart/item-cart.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/categories-nav/categories-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/categories-nav/categories-nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header-menu/header-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header-menu/header-menu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/models.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/sub-category-detail/sub-category-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/sub-category-detail/sub-category-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/services/category/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/services/category/category.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/services/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/services/login/login.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,6 +117,10 @@
       <workItem from="1682673318050" duration="9049000" />
       <workItem from="1682746346136" duration="525000" />
       <workItem from="1683017500760" duration="239000" />
+      <workItem from="1683048756351" duration="262000" />
+      <workItem from="1683049034383" duration="310000" />
+      <workItem from="1683049359733" duration="5980000" />
+      <workItem from="1683097815639" duration="325000" />
     </task>
     <servers />
   </component>
