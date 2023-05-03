@@ -2,6 +2,7 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 
 from users.permissions import IsAdminOrReadOnly
+from shop.models import Shop
 from .models import Category, Product, ProductImage, SubCategory
 from .serializers import ProductSerializer, CategorySerializer, ProductImageSerializer, SubCategorySerializer
 
