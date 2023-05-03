@@ -23,12 +23,11 @@ class UserSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
-
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-    def validate(self, attrs):
-        data = super().validate(attrs)
-        del data['refresh']
-        return data
+    def get_token(cls, user):
+        token = super().get_token(user)
+        token['user_type'] = user.user_type
+        return token
 
 
 class CustomTokenObtainPairView(TokenObtainPairView):
