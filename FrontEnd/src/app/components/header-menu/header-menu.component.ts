@@ -9,15 +9,14 @@ export class HeaderMenuComponent implements OnInit{
   isSeller: boolean | undefined;
   isCustomer: boolean | undefined;
   ngOnInit() {
-    if(localStorage.getItem('isSeller')) this.isSeller = true;
-    if(localStorage.getItem('isCustomer')) this.isCustomer = true;
+    if(localStorage.getItem('user_type')=='Seller') this.isSeller = true;
+    if(localStorage.getItem('user_type')=='Customer') this.isCustomer = true;
   }
 
   logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('logged');
-    localStorage.removeItem('isCustomer');
-    localStorage.removeItem('isSeller');
+    localStorage.removeItem('user_type');
+    localStorage.removeItem('id');
   }
 
 }

@@ -3,7 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {first} from "rxjs";
 import { LoginService } from "../../services/login/login.service";
-import {Person} from "../../models";
+import {AuthToken, MyJwtPayload, Person} from "../../models";
+import jwt_decode, { JwtPayload } from 'jwt-decode';
 
 @Component({
   selector: 'app-login-page',
@@ -11,9 +12,8 @@ import {Person} from "../../models";
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit{
-  username: string = '';
-  password: string = '';
-  person: Person = {username: '', password: ''};
+
+  person: Person = {email: '', password: ''};
   loginError: boolean | undefined;
 
   constructor(private loginService: LoginService, private router: Router){
@@ -24,43 +24,23 @@ export class LoginPageComponent implements OnInit{
   }
 
   ngOnInit() {
-    // const token = localStorage.getItem('token');
-    // const role = localStorage.getItem('role');
-    // if (token) {
-    //   this.loginService.logged = true;
-    // }else if(role.value == 'customer'){
-    //   this.loginService.isCustomer = true;
-    // }else if(role.value == 'customer'){
-    //   this.loginService.isSeller = true;
-    // }
     this.loginError = true;
   }
   login() {
-    // this.loginService.logIn(this.username, this.password).subscribe((data) => {
-    //   localStorage.setItem('token', data.token);
-    //   this.loginService.logged = true;
-    //   this.router.navigate([`/`]);
-    // });
-    if(this.person.username == 'customer' && this.person.password=='customer'){
-      // StorageService.logged = true;
-      // StorageService.isCustomer = true;
-      localStorage.setItem('logged', 'true');
-      localStorage.setItem('isCustomer', 'true')
-      this.loginError = true;
-      console.log(this.person.username, this.person.password)
+    this.loginService.logIn(this.person.email, this.person.password).subscribe((data) => {
+      // const token = data.get("access");
+      localStorage.setItem('token', data.access);
+      console.log(data.access)
+
+      const decoded: MyJwtPayload = jwt_decode(data.access);
+
+      console.log(decoded.user_id)
+      console.log(decoded.user_type)
+
+      localStorage.setItem('id', String(decoded.user_id));
+      localStorage.setItem('user_type', decoded.user_type)
       this.router.navigate([`/`]);
-    }else if(this.person.username == 'seller' && this.person.password=='seller'){
-      // StorageService.logged = true;
-      // StorageService.isSeller = true;
-      localStorage.setItem('logged', 'true');
-      localStorage.setItem('isSeller', 'true')
-      this.loginError = true;
-      console.log(this.person.username, this.person.password)
-      this.router.navigate([`/`]);
-    }else{
-      console.log(this.person.username, this.person.password)
-      this.loginError = false;
-    }
+    });
   }
 
 

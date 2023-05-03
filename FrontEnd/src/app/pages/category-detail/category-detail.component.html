@@ -82,7 +82,7 @@
   <div class="category-detail-right">
     <h2>1Market Магазин <img src="../../../assets/media/icons/right-arrow2.svg" alt=""> <span>{{currentCategory.name | titlecase}}</span></h2>
     <div>
-      <app-product-list-in-category-detail>
+      <app-product-list-in-category-detail [products] = "products">
 
       </app-product-list-in-category-detail>
     </div>

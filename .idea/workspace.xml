@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9a07766a-c2d9-4f78-878b-eef1181d6788" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Imarket/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Imarket/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/item-detail/item-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/product-list-in-category-detail/product-list-in-category-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/product-list-in-category-detail/product-list-in-category-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/product-list-in-category-detail/product-list-in-category-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/product-list-in-category-detail/product-list-in-category-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/models.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/category-detail/category-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/login-page/login-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/pages/sub-category-detail/sub-category-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/pages/sub-category-detail/sub-category-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/services/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/services/product/product.service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2O9NyGtQH0D7XFs6IUvXV7g7Wfp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/Web Dev&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Asus\\1market\\FrontEnd\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\assets\media" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\pages" />
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\components" />
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\storage" />
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\product" />
+      <recent name="C:\Users\Asus\1market\FrontEnd\src\app\services\item" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a07766a-c2d9-4f78-878b-eef1181d6788" name="Changes" comment="" />
+      <created>1680969090921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680969090921</updated>
+      <workItem from="1680969092017" duration="1422000" />
+      <workItem from="1680970544727" duration="9816000" />
+      <workItem from="1681531523239" duration="6416000" />
+      <workItem from="1681541304889" duration="2018000" />
+      <workItem from="1681575103383" duration="14160000" />
+      <workItem from="1681667500502" duration="5670000" />
+      <workItem from="1681721456624" duration="10000" />
+      <workItem from="1681757633672" duration="18000" />
+      <workItem from="1681881800715" duration="1853000" />
+      <workItem from="1681926893348" duration="8450000" />
+      <workItem from="1681959509257" duration="2454000" />
+      <workItem from="1681990331265" duration="589000" />
+      <workItem from="1682101163002" duration="11856000" />
+      <workItem from="1682137380326" duration="7172000" />
+      <workItem from="1682186836473" duration="7176000" />
+      <workItem from="1682258340185" duration="5182000" />
+      <workItem from="1682327573941" duration="587000" />
+      <workItem from="1682328177217" duration="623000" />
+      <workItem from="1682339755835" duration="2534000" />
+      <workItem from="1682412603095" duration="519000" />
+      <workItem from="1682421917395" duration="604000" />
+      <workItem from="1682441705886" duration="20000" />
+      <workItem from="1682441942561" duration="20000" />
+      <workItem from="1682452228304" duration="368000" />
+      <workItem from="1682494731964" duration="7734000" />
+      <workItem from="1682536463803" duration="4592000" />
+      <workItem from="1682567377951" duration="3901000" />
+      <workItem from="1682593242312" duration="1224000" />
+      <workItem from="1682673318050" duration="9049000" />
+      <workItem from="1682746346136" duration="525000" />
+      <workItem from="1683017500760" duration="239000" />
+      <workItem from="1683048756351" duration="262000" />
+      <workItem from="1683049034383" duration="310000" />
+      <workItem from="1683049359733" duration="5980000" />
+      <workItem from="1683097815639" duration="2994000" />
+      <workItem from="1683103246050" duration="9148000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
