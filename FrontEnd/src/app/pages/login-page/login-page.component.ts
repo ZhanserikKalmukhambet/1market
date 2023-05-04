@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {first} from "rxjs";
 import { LoginService } from "../../services/login/login.service";
 import {AuthToken, MyJwtPayload, Person} from "../../models";
 import jwt_decode, { JwtPayload } from 'jwt-decode';
@@ -17,9 +15,6 @@ export class LoginPageComponent implements OnInit{
   loginError: boolean | undefined;
 
   constructor(private loginService: LoginService, private router: Router){
-    // // this.person = new Person();
-    // this.person.username = '';
-    // this.person.password = '';
 
   }
 

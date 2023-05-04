@@ -25,14 +25,11 @@ export interface WarehouseItem {
 
 
 export interface Shop {
-  id: number;
   name: string;
-  rating: number;
   address: string;
-  seller: authUser;
+  rating: number;
+  sellerID: number;
 }
-
-
 
 export interface authUser{
   username: string;
@@ -40,9 +37,12 @@ export interface authUser{
 }
 
 export interface nonAuthUser{
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   username: string;
+  email: string;
+  user_type: string;
+  phone_number: string;
   password: string;
 
 }

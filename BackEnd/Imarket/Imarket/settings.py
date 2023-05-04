@@ -33,9 +33,24 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+
+        'rest_framework.authentication.SessionAuthentication',
+
+        'rest_framework.authentication.BasicAuthentication',
+
+        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ]
+}
+
+
 # Application definition
 
 INSTALLED_APPS = [
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,9 +59,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third party applications
+    'rest_framework.authtoken',
     'rest_framework',
     'corsheaders',
     'drf_yasg',
+    'django.contrib.postgres',
     'rest_framework_simplejwt',
 
     # internal applications
@@ -114,6 +131,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'imarket',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'kbtu',
+        # 'HOST': 'localhost',
+        # 'PORT': '5432',
     }
 }
 
@@ -167,5 +190,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_USER = 'zaibaldjango@gmail.com'
-EMAIL_HOST_PASSWORD = 'zaibaldjango'
+EMAIL_HOST_USER = 'django@gmail.com'
+EMAIL_HOST_PASSWORD = 'django'
+
+

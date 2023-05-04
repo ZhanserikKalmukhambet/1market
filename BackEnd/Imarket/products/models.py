@@ -26,7 +26,7 @@ class SubCategory(models.Model):
     category = models.ForeignKey(to=Category, on_delete=models.CASCADE, related_name='subcategories')
 
     def __str__(self):
-        return f'{self.name} -> from {self.category.name}'
+        return f'subcat: {self.name} -> from cat: {self.category.name}'
 
     class Meta:
         verbose_name = 'Subcategory'
@@ -48,7 +48,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
-        ordering = ('-created_at', )
+        # ordering = ('-created_at', )
 
     def __str__(self):
         return f"id: {self.pk}, {self.name} ({self.subcategory.name})"
