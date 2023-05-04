@@ -74,13 +74,30 @@ export interface SubCategoryBack {
 }
 
 export interface Product {
-  id: string;
+  id: number;
   name : string;
   main_image : string;
   is_active : boolean;
   description : string;
   rating : number;
   subCategory_id: number;
+
 }
 
-
+export interface Image {
+  link: string;
+}
+export interface BasketItem {
+  id : number;
+  quantity : number;
+  order_id : number;
+  warehouse_id : number
+}
+export interface ItemInBusket {
+  id : number;
+  name : string;
+  quantity : number;
+  shop_name : string;
+  priceInShop : number;
+  mainImage : string;
+}

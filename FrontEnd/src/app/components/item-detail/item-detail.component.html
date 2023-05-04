@@ -1,4 +1,4 @@
-<a *ngIf="item" class="item" routerLink="1">
+<a *ngIf="item" class="item" >
 <!--  <img src="{{product.main_image}}" alt="">-->
   <div class="item-img">
     <img src="assets/media/images/Products/Iphone14ProMax256GbPink.jpg" alt="">
@@ -9,10 +9,9 @@
   </div>
   <div class="price" *ngIf="isCustomer">
     <p>Цена</p>
-<!--    <span>{{item.price}} т</span>-->
+    <span>{{price}} т</span>
   </div>
   <div class="forSeller" *ngIf="isSeller">
     <a href="/categories/1/products/{{item.id}}"><button>Добавить в каталог</button></a>
-
   </div>
 </a>

@@ -26,5 +26,6 @@ export class HeaderComponent implements OnInit{
 
     // console.log('logged: ', this.logged, 'seller: ', this.isSeller, 'customer: ', this.isCustomer)
   }
+  // searchByName()
 
 }

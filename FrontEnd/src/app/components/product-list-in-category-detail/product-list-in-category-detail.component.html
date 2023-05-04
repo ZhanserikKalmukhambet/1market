@@ -3,6 +3,7 @@
     <app-item-detail
       *ngFor="let item of products "
       [item]="item"
+      [price]="getMinPrice(item.id)"
     ></app-item-detail>
 ]  </div>
 </div>

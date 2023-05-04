@@ -1,7 +1,8 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-import {CategoryBack,SubCategoryBack} from "../../models";
+import {CategoryBack, Product, SubCategoryBack} from "../../models";
 import {CategoryService} from "../../services/category/category.service";
 import {ActivatedRoute} from "@angular/router";
+import {ProductService} from "../../services/product/product.service";
 
 @Component({
   selector: 'app-sub-category-detail',
@@ -21,16 +22,20 @@ export class SubCategoryDetailComponent implements OnInit {
   categories : CategoryBack[]  ;
 
   currentCategory: CategoryBack ;
-  constructor(private categoryService : CategoryService, private route: ActivatedRoute) {
+  products: Product[];
+
+  constructor(private categoryService : CategoryService, private route: ActivatedRoute, private productService : ProductService) {
     this.currentSubCategory = {} as SubCategoryBack
     this.categories = [];
     this.currentCategory = {} as CategoryBack
+    this.products = []
   }
   getCategories(){
     this.categoryService.getCategories().subscribe((data) => {
       this.categories = data;
     });
   }
+
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) =>{
@@ -42,6 +47,9 @@ export class SubCategoryDetailComponent implements OnInit {
       })
       this.categoryService.getSubCategory(id, s_id).subscribe((subCategory) =>{
         this.currentSubCategory = subCategory;
+      })
+      this.productService.getSubcategoryProducts(id, s_id).subscribe( (data) => {
+        this.products = data
       })
     })
     this.getCategories()

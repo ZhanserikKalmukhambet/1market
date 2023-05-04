@@ -15,6 +15,7 @@ export class LoginService {
   constructor(private client: HttpClient) {
   }
 
+
   logIn(email: string, password: string): Observable<AuthToken> {
     return this.client.post<AuthToken>(
       `${this.BASE_URL}/api/token/`,

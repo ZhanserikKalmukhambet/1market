@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../models";
+import {ProductService} from "../../services/product/product.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -10,26 +12,12 @@ import {Product} from "../../models";
 export class ItemCartComponent implements OnInit{
   // @Input() item !: Product;
   mainImage : string = "assets/media/images/Products/Iphone14ProMax256GbPink.jpg"
-  item = {
-    "id": "a45eb5d5-d21b-4c14-8511-6934ee84936c",
-    "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-    "description" : "- технология NFC: Да_\n" +
-      "- цвет: черный_\n" +
-      "- тип экрана: OLED, Super Retina XDR_\n" +
-      "- диагональ: 6.1 дюйм_\n" +
-      "- размер оперативной памяти: 4 ГБ_\n" +
-      "- процессор: 6-ядерный Apple A15 Bionic_\n" +
-      "- объем встроенной памяти: 128 ГБ_\n" +
-      "- емкость аккумулятора: 3095 мАч_",
-    "price": 520,
-    "rating": 3,
-    "count" : 4,
-    "main_image" : "sdf",
-    "is_active" : true,
-    "category" : "sd",
-    "subCategory" : "sd"
+  item : Product;
+  constructor(private productService : ProductService, private route: ActivatedRoute) {
+    this.item = {} as Product;
   }
   logged: boolean = false;
+  price : number | undefined;
   isCustomer: boolean = false;
   isSeller: boolean = false;
   ngOnInit(): void {
@@ -38,6 +26,16 @@ export class ItemCartComponent implements OnInit{
     if(localStorage.getItem('isCustomer') == 'true') this.isCustomer = true;
     if(localStorage.getItem('isSeller') == 'true') this.isSeller = true;
 
+    this.route.paramMap.subscribe((params) =>{
+      const id = Number(params.get('id'));
+
+      this.productService.getProduct(id).subscribe((product) => {
+        this.item = product;
+      });
+      this.productService.getMinPrice(id).subscribe((data) => {
+        this.price = data;
+      })
+    })
   }
 
   changeMainImage(event: any){
@@ -49,4 +47,5 @@ export class ItemCartComponent implements OnInit{
     // event.style.border = "1px solid blue"
     this.mainImage = imageSrc;
   }
+
 }

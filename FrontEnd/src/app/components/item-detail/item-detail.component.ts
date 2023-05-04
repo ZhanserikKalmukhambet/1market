@@ -8,7 +8,8 @@ import {Product} from "../../models";
 })
 export class ItemDetailComponent implements OnInit{
   // @Input() product: Product  ;
-  @Input() item !: Product
+  @Input() item !: Product;
+  @Input() price !: number;
   isSeller: boolean | undefined;
   isCustomer: boolean | undefined;
   constructor(

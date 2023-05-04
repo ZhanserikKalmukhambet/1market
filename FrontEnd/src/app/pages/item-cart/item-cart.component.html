@@ -35,7 +35,7 @@
       <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="false"></ngb-rating>
       <div class="price" *ngIf="isCustomer">
         <p>Цена</p>
-        <span>{{item.price}} т</span>
+        <span>{{price}} т</span>
       </div>
       <div class="item-description">
         <p [innerHTML]="item.description"></p>

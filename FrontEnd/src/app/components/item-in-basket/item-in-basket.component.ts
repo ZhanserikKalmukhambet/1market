@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Product} from "../../models";
 
 @Component({
   selector: 'app-item-in-basket',
@@ -6,17 +7,5 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./item-in-basket.component.css']
 })
 export class ItemInBasketComponent {
-  @Input() item = {
-    "id": "",
-    "name": "",
-    "description" : "",
-    "price": 0,
-    "rating": 0,
-    "count" : 0,
-    "main_image" : "",
-    "is_active" : true,
-    "category" : "",
-    "subCategory" : ""
-
-  }
+  @Input() item !: Product;
 }
