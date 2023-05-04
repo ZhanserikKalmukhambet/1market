@@ -1,47 +1,59 @@
 import { Component, OnInit } from '@angular/core';
 
 import { RegisterService } from '../../services/register/register.service';
-import {nonAuthUser} from "../../models";
-import {ActivatedRoute, Router} from "@angular/router";
+import {nonAuthUser, Person, Shop} from "../../models";
+import {Router} from "@angular/router";
+import {isNumber} from "@ng-bootstrap/ng-bootstrap/util/util";
 
-@Component({ templateUrl: 'registration-page.component.html' })
-export class RegistrationPageComponent {
+@Component({
+  templateUrl: 'registration-page.component.html',
+  styleUrls: ['./registration-page.component.css']
+})
+export class RegistrationPageComponent implements OnInit{
+  last_user_id: number;
+  isSeller: boolean;
+  sended: boolean;
+  code: string;
+  newUser: nonAuthUser = {first_name: '', last_name: '', username: '', email: '', user_type: 'Customer', phone_number: '', password: ''};
+  newShop: Shop = {name: '', address: '', rating: 0, sellerID: 0};
 
-  loading = false;
-  isCompany: boolean = false  ;
-  submitted = false;
-  firstName: string = '';
-  lastName: string = '';
-  username: string = '';
-  password: string = '';
-  companyName: string = '';
+  constructor(private registerService: RegisterService, private router: Router) {
+    this.isSeller = false;
+    this.sended = false;
+    this.code = "";
+    this.last_user_id = -1;
+  }
 
-  // constructor(private registerService: RegisterService,
-  //             private router: Router,
-  // ) {
-  //
-  // }
-
-
-  // isCompany = (<HTMLInputElement>document.getElementById("flexSwitchCheckDefault")).checked
-  isItCompany(){
-    console.log(this.isCompany)
-    if((<HTMLInputElement>document.getElementById("flexSwitchCheckDefault")).checked){
-      this.isCompany = true;
-    }else{
-      this.isCompany = false;
+  userRegistration(){
+    if(this.isSeller){
+      this.newUser.user_type = "Seller";
     }
+    this.registerService.register(this.newUser.first_name, this.newUser.last_name, this.newUser.username, this.newUser.email, this.newUser.user_type, this.newUser.phone_number,
+                                  this.newUser.password).subscribe((data) => {
+                                    return data
+      this.router.navigate([`/`]);
+    });
+  }
+
+  createShopForSeller(){
+    this.registerService.createShop(this.newShop.name, this.newShop.address, this.last_user_id + 1).subscribe(() => {
+    })
   }
 
 
-  // userRegistration() {
+  ngOnInit(): void{
+    this.getLastUserID();
+  }
+
+  getLastUserID(){
+    this.registerService.getLastUserID().subscribe((id) => {
+      this.last_user_id = id;
+    })
+  }
+
+  // sendCodeToEmail(){
+  //   this.registerService.sendCodeToEmail(this.newUser.email).subscribe(() => {
   //
-  //   this.submitted = true;
-  //   this.loading = true;
-  //
-  //   this.registerService.register(this.firstName, this.lastName, this.username, this.password).subscribe((data) => {
-  //       // alert
-  //       this.router.navigate(['../login'])
-  //   });
+  //   })
   // }
 }

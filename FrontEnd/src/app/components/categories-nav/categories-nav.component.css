@@ -22,6 +22,7 @@
   min-height: 100%;
   /*box-sizing: border-box;*/
   transition: .2s;
+  text-transform: uppercase;
 }
 
 .categories-nav a{

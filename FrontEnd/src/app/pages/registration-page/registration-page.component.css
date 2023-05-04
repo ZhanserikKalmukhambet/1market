@@ -1,0 +1,13 @@
+.code{
+  color: #00A2DC;
+}
+.code:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.shop-form{
+  margin-top: 20px;
+  font-style: oblique;
+}

@@ -1,27 +1,45 @@
 import { Injectable } from '@angular/core';
-import { nonAuthUser } from '../../models';
+import {nonAuthUser, Shop} from '../../models';
 import {HttpClient} from "@angular/common/http";
+import {map, Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
   BASE_URL = 'http://localhost:8000'
-  register(firstName: string, lastName: string, username: string, password: string) {
-    return this.http.post(`${this.BASE_URL}/api/register`, {
-      firstName,
-      lastName,
+
+  constructor(private client: HttpClient) {
+
+  }
+
+  register( first_name: string,
+            last_name: string,
+            username: string,
+            email: string,
+            user_type: string,
+            phone_number: string,
+            password: string): Observable<nonAuthUser> {
+    return this.client.post<nonAuthUser>(`${this.BASE_URL}/api/register/`, {
+      first_name,
+      last_name,
       username,
+      email,
+      user_type,
+      phone_number,
       password
-    });
+    })
   }
-  registerOfCompany(firstName: string, lastName: string, username: string, password: string, companyName: string) {
-    return this.http.post(`${this.BASE_URL}/api/register`, {
-      firstName,
-      lastName,
-      username,
-      password,
-      companyName
-    });
+
+  createShop(name: string, address: string, id: number): Observable<Shop> {
+    return this.client.post<Shop>(`${this.BASE_URL}/api/shops/`, {name, address, id})
   }
-  constructor(private http: HttpClient) { }
+
+  getLastUserID(): Observable<number>{
+    return this.client.get<number>(`${this.BASE_URL}/api/users/last_id/`)
+  }
+
+  // sendCodeToEmail(email: string) {
+  //   return this.client.post<any>(`${this.BASE_URL}/api/register/verify/`, email
+  //   )
+  // }
 }
