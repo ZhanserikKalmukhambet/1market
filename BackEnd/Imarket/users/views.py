@@ -1,19 +1,21 @@
-import datetime
 import random
 import string
 import time
 
-import jwt
 from django.shortcuts import render
-from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.exceptions import AuthenticationFailed
 
-from .models import User
 from .serializers import UserSerializer
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 from orders.models import Order
+from rest_framework.response import Response
+
+from datetime import datetime
+from django.conf import settings
+from rest_framework_simplejwt import exceptions
+from rest_framework_simplejwt.utils import datetime_to_epoch, format_lazy
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 random.seed(time.time())
 
@@ -32,24 +34,6 @@ def send_to_email(request):
         )
 
     return render(request, 'index.html')
-
-
-class UserView(APIView):
-    def get(self, request):
-        token = request.COOKIES.get('token')
-
-        if not token:
-            return Response({'detail': 'Unauthenticated!'})
-
-        try:
-            payload = jwt.decode(token, 'secret', algorithms=['HS256'])
-        except jwt.ExpiredSignatureError:
-            return Response({'detail': 'Unauthenticated!'})
-
-        user = User.objects.filter(id=payload['id']).first()
-        serializer = UserSerializer(user)
-
-        return Response(serializer.data)
 
 
 class RegisterView(APIView):
@@ -73,32 +57,3 @@ class RegisterView(APIView):
 
         return Response(serializer.data)
 
-
-class LoginView(APIView):
-    def post(self, request):
-        email = request.data['email']
-        password = request.data['password']
-
-        user = User.objects.all().filter(email=email).first()
-
-        if user is None:
-            raise AuthenticationFailed('User not found!')
-
-        if not user.check_password(password):
-            raise AuthenticationFailed('Password is incorrect!')
-
-        payload = {
-            'id': user.id,
-            'email': user.email,
-            'user_type': user.user_type,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
-            'iat': datetime.datetime.utcnow()
-        }
-
-        print("---payload--:", payload)
-        token = jwt.encode(payload, 'secret', algorithm='HS256')
-        print("---token--:", token)
-
-        response = Response(token)
-
-        return response

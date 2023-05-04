@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
@@ -9,6 +7,7 @@ from users.models import User
 from .models import Order, OrderItem
 
 from .serializers import OrderSerializer, OrderItemSerializer
+from users.permissions import IsAdminOrReadOnly, IsCustomer
 
 
 def get_last_order(user_id):
@@ -21,6 +20,7 @@ def get_last_order(user_id):
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+    permission_classes = (IsAdminOrReadOnly, IsCustomer)
 
     def purchase_orderitems_in_order(self, request, user_id):  # aka: purchase_orderitems_in_cart
         last_order = get_last_order(user_id)
@@ -40,6 +40,7 @@ class OrderViewSet(viewsets.ModelViewSet):
 class OrderItemViewSet(viewsets.ModelViewSet):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
+    permission_classes = (IsAdminOrReadOnly, IsCustomer)
 
     def get_order_items_in_cart(self, request, user_id):
         last_order = get_last_order(user_id)

@@ -2,17 +2,18 @@
   <a href="categories/1">
     ВСЕ КАТЕГОРИИ
     <div class="all-categories">
-      <a href="categories/1" *ngFor="let category of categories">
-        {{category.name}} <img src="../../../assets/media/icons/right-arrow.svg" alt="">
+      <a href="categories/{{category[0].id}}"
+         *ngFor="let category of categoryToSubCategoriesMap.entries()" >
+        {{category[0].name}} <img src="../../../assets/media/icons/right-arrow.svg" alt="">
       </a>
     </div>
   </a>
-  <a  href="categories/1"
-  *ngFor="let category of categories"
+  <a  href="categories/{{category[0].id}}"
+  *ngFor="let category of categoryToSubCategoriesMap.entries()"
   >
-    {{category.name}}
+    {{category[0].name}}
     <div class="all-categories">
-      <a href="categories/1/subcategories/1"  *ngFor="let subCategory of category.subCategories">{{subCategory.name}} <img src="../../../assets/media/icons/right-arrow.svg" alt=""></a>
+      <a href="categories/{{category[0].id}}/subcategories/{{subCategory.id}}"  *ngFor="let subCategory of category[1]">{{subCategory.name}} <img src="../../../assets/media/icons/right-arrow.svg" alt=""></a>
     </div>
   </a>
 

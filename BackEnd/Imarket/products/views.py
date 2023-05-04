@@ -1,10 +1,10 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 
+from users.permissions import IsAdminOrReadOnly
 from shop.models import Shop
 from .models import Category, Product, ProductImage, SubCategory
 from .serializers import ProductSerializer, CategorySerializer, ProductImageSerializer, SubCategorySerializer
-from users.permissions import IsSeller, IsCustomer
 
 from django.contrib.postgres.search import SearchVector, TrigramSimilarity, TrigramDistance
 
@@ -12,6 +12,7 @@ from django.contrib.postgres.search import SearchVector, TrigramSimilarity, Trig
 class ProductImageViewSet(viewsets.ModelViewSet):
     queryset = ProductImage.objects.all()
     serializer_class = ProductImageSerializer
+    permission_classes = (IsAdminOrReadOnly, )
 
     def product_images_of_product(self, request, product_id):
         queryset = ProductImage.objects.all().filter(product_id=product_id)
@@ -22,12 +23,13 @@ class ProductImageViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    permission_classes = (IsSeller, )
+    permission_classes = (IsAdminOrReadOnly,)
 
 
 class SubCategoryViewSet(viewsets.ModelViewSet):
     queryset = SubCategory.objects.all()
     serializer_class = SubCategorySerializer
+    permission_classes = (IsAdminOrReadOnly,)
 
     def get_subcategories_of_category(self, req, category_id):
         queryset = SubCategory.objects.all().filter(category_id=category_id)
@@ -38,6 +40,7 @@ class SubCategoryViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = (IsAdminOrReadOnly,)
 
 
     def get_min_product_price(self, product_id):
@@ -108,7 +111,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     def put_rating_to_product(self, request, product_id, new_rating) -> Response:
         product = Product.objects.get(id=product_id)
         product.rate_cnt = product.rate_cnt + 1
-        product.rating = (product.rating + new_rating) / (product.rate_cnt)
+        product.rating = (product.rating + new_rating) / product.rate_cnt
         product.save()
         return Response(data=product.rating, status=status.HTTP_200_OK)
 
