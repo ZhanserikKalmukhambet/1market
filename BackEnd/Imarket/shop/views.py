@@ -9,7 +9,7 @@ class ShopViewSet(viewsets.ModelViewSet):
     queryset = Shop.objects.all()
     serializer_class = ShopSerializer
 
-    def put_rating_to_shop(self, request, shop_id, new_rating) -> int:
+    def put_rating_to_shop(self, request, shop_id, new_rating) -> Response:
         shop = Shop.objects.get(id=shop_id)
         shop.rate_cnt = shop.rate_cnt + 1
         shop.rating = (shop.rating + new_rating) / (shop.rate_cnt)

@@ -39,12 +39,12 @@ class UserView(APIView):
         token = request.COOKIES.get('token')
 
         if not token:
-            return Response({'detail': 'Unauthentificated!'})
+            return Response({'detail': 'Unauthenticated!'})
 
         try:
             payload = jwt.decode(token, 'secret', algorithms=['HS256'])
         except jwt.ExpiredSignatureError:
-            return Response({'detail': 'Unauthentificated!'})
+            return Response({'detail': 'Unauthenticated!'})
 
         user = User.objects.filter(id=payload['id']).first()
         serializer = UserSerializer(user)
@@ -65,8 +65,11 @@ class RegisterView(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        new_order = Order(serializer.data["id"])
-        new_order.save()
+        if (serializer.data["user_type"] == "Customer"):
+            new_order = Order(user=User.objects.get(id=serializer.data["id"]))
+            new_order.save()
+        else:
+            print("\n\n---SELLER IS CREATED----\n\n")
 
         return Response(serializer.data)
 
@@ -92,7 +95,9 @@ class LoginView(APIView):
             'iat': datetime.datetime.utcnow()
         }
 
+        print("---payload--:", payload)
         token = jwt.encode(payload, 'secret', algorithm='HS256')
+        print("---token--:", token)
 
         response = Response(token)
 

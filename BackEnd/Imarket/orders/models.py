@@ -19,7 +19,7 @@ class Order(models.Model):
     def __str__(self):
         return f'order_id: {self.pk} || ' \
                f'{self.completed}, {self.delivery_date}, {self.delivery_address}, {self.delivery_price} || ' \
-               f'----- {self.user}'
+               f'----- user: {self.user}'
 
 
 class OrderItem(models.Model):
@@ -28,6 +28,7 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
-        return f'order_item_id: {self.pk} & order_item_cnt: {self.quantity} ' \
-               f'--- wh: {self.warehouse_item.product.name} & wh_cnt: {self.warehouse_item.quantity} ' \
-               f'--- order: {self.order}'
+        return f'order_item_id: {self.pk} ' \
+               f'--- wh: {self.warehouse_item.product.name} ' \
+               f'--- order_id: {self.order.id}' \
+               f'--- user_id: {self.order.user_id}'
