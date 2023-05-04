@@ -25,10 +25,18 @@ export interface WarehouseItem {
 
 
 export interface Shop {
+<<<<<<< HEAD
   name: string;
   address: string;
   rating: number;
   sellerID: number;
+=======
+  id: number;
+  name: string;
+  rating: number;
+  address: string;
+  seller: authUser;
+>>>>>>> 2d527695d50cc5993ae2dcaf695b9088df2dd35b
 }
 
 
@@ -85,3 +93,7 @@ export interface Product {
   subCategory_id: number;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d527695d50cc5993ae2dcaf695b9088df2dd35b

@@ -57,7 +57,10 @@ class RegisterView(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        new_order = Order(serializer.data["id"])
-        new_order.save()
+        if (serializer.data["user_type"] == "Customer"):
+            new_order = Order(user=User.objects.get(id=serializer.data["id"]))
+            new_order.save()
+        else:
+            print("\n\n---SELLER IS CREATED----\n\n")
 
         return Response(serializer.data)

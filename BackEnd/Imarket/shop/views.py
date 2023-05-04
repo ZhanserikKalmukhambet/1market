@@ -18,6 +18,14 @@ class ShopViewSet(viewsets.ModelViewSet):
         shop.save()
         return Response(data=shop.rating, status=status.HTTP_200_OK)
 
+    def put_rating_to_shop(self, request, shop_id, new_rating) -> Response:
+        shop = Shop.objects.get(id=shop_id)
+        shop.rate_cnt = shop.rate_cnt + 1
+        shop.rating = (shop.rating + new_rating) / (shop.rate_cnt)
+        shop.save()
+        return Response(data=shop.rating, status=status.HTTP_200_OK)
+
+
 
 class WarehouseViewSet(viewsets.ModelViewSet):
     queryset = WarehouseItem.objects.all()
@@ -33,5 +41,3 @@ class WarehouseViewSet(viewsets.ModelViewSet):
         queryset = WarehouseItem.objects.filter(shop_id=shop_id)
         serializer = WarehouseItemSerializer(queryset, many=True)
         return Response(serializer.data)
-
-
