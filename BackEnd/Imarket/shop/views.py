@@ -18,14 +18,6 @@ class ShopViewSet(viewsets.ModelViewSet):
         shop.save()
         return Response(data=shop.rating, status=status.HTTP_200_OK)
 
-    def put_rating_to_shop(self, request, shop_id, new_rating) -> int:
-        shop = Shop.objects.get(id=shop_id)
-        shop.rate_cnt = shop.rate_cnt + 1
-        shop.rating = (shop.rating + new_rating) / (shop.rate_cnt)
-        shop.save()
-        return Response(data=shop.rating, status=status.HTTP_200_OK)
-
-
 
 class WarehouseViewSet(viewsets.ModelViewSet):
     queryset = WarehouseItem.objects.all()

@@ -1,9 +1,7 @@
-from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.db import models
 from users.models import User
 from users.choices import Role
-
 
 def validate_rating(value):
     if 0 <= value <= 5:
@@ -22,8 +20,7 @@ class Shop(models.Model):
         to=User,
         on_delete=models.CASCADE,
         related_name='seller_shops',
-        limit_choices_to={'user_type': Role.SELLER}
-    )
+        limit_choices_to={'user_type': Role.SELLER},)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

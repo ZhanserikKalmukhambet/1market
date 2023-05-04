@@ -12,7 +12,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-// import { HttpClientModule } from '@angular/common/http';
 
 import {AuthInterceptor} from "./AuthInterceptor";
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
