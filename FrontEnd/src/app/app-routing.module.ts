@@ -16,12 +16,9 @@ const routes: Routes = [
   {path: 'registration', component: RegistrationPageComponent},
   {path: 'shop', component: HomePageComponent},
   {path: 'categories/:id', component: CategoryDetailComponent},
-  {path: 'categories/subcategories/1/1', component: ItemCartComponent},
   {path: 'basket/:id', component: BasketComponent},
-  {path: 'categories/:id', component: CategoryDetailComponent},
   {path: 'categories/:id/products/:p_id', component: ItemCartComponent},
   {path: 'categories/:id/subcategories/:subCategory_id', component: SubCategoryDetailComponent},
-  // {path: 'categories/1/subcategories/1/products/1', component: ItemCartComponent},
   {path: 'myOrders', component: MyOrdersComponent},
   {path: 'myProducts', component: SellerProductsComponent},
   {path: '', redirectTo: 'shop', pathMatch: 'full'}

@@ -1,15 +1,15 @@
 <a *ngIf="item" class="item" >
 <!--  <img src="{{product.main_image}}" alt="">-->
   <div class="item-img">
-    <img src="assets/media/images/Products/Iphone14ProMax256GbPink.jpg" alt="">
+    <img src="http://localhost:8000{{item.main_image}}" alt="">
   </div>
-  <a routerLink="products/1" href="">{{item.name}}</a>
+  <a routerLink="products/{{item.id}}" href="">{{item.name}}</a>
   <div class="rating-in-stars">
     <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="true"></ngb-rating>
   </div>
   <div class="price" *ngIf="isCustomer">
     <p>Цена</p>
-    <span>{{price}} т</span>
+    <span>{{item.price}} т</span>
   </div>
   <div class="forSeller" *ngIf="isSeller">
     <a href="/categories/1/products/{{item.id}}"><button>Добавить в каталог</button></a>

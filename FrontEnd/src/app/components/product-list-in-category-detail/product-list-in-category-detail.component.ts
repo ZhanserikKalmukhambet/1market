@@ -13,10 +13,10 @@ export class ProductListInCategoryDetailComponent {
   constructor(private productService : ProductService) {
   }
 
-  getMinPrice(id: number) {
-    this.productService.getMinPrice(id).subscribe((data) => {
-      return data;
-    })
-    return 0;
-  }
+  // getMinPrice(id: number) {
+  //   this.productService.getMinPrice(id).subscribe((data) => {
+  //     return data;
+  //   })
+  //   return 0;
+  // }
 }

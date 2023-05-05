@@ -24,7 +24,10 @@ urlpatterns = [
 
     path('products/searching/<str:query>/',
          ProductViewSet.as_view({'get': 'searching'}), name='search product'),
-
+    path('products/<int:product_id>/avg_price/',
+         ProductViewSet.as_view({'get': 'get_products_avg_price'}), name='avg price'),
+    path('shops/<int:shop_id>/products/',
+         ProductViewSet.as_view({'get': 'get_products_of_shop'}), name='shop products')
 ]
 
 r = routers.DefaultRouter()

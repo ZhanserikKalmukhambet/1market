@@ -1,18 +1,17 @@
+from django.db.models import Avg
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-
 from users.permissions import IsAdminOrReadOnly
-from shop.models import Shop
+from shop.models import WarehouseItem, Shop
 from .models import Category, Product, ProductImage, SubCategory
 from .serializers import ProductSerializer, CategorySerializer, ProductImageSerializer, SubCategorySerializer
-
-from django.contrib.postgres.search import SearchVector, TrigramSimilarity, TrigramDistance
 
 
 class ProductImageViewSet(viewsets.ModelViewSet):
     queryset = ProductImage.objects.all()
     serializer_class = ProductImageSerializer
-    permission_classes = (IsAdminOrReadOnly,)
+
+    # permission_classes = (IsAdminOrReadOnly,)
 
     def product_images_of_product(self, request, product_id):
         queryset = ProductImage.objects.all().filter(product_id=product_id)
@@ -23,13 +22,14 @@ class ProductImageViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    permission_classes = (IsAdminOrReadOnly,)
+    # permission_classes = (IsAdminOrReadOnly,)
 
 
 class SubCategoryViewSet(viewsets.ModelViewSet):
     queryset = SubCategory.objects.all()
     serializer_class = SubCategorySerializer
-    permission_classes = (IsAdminOrReadOnly,)
+
+    # permission_classes = (IsAdminOrReadOnly,)
 
     def get_subcategories_of_category(self, req, category_id):
         queryset = SubCategory.objects.all().filter(category_id=category_id)
@@ -42,11 +42,22 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
     permission_classes = (IsAdminOrReadOnly,)
 
-    def get_min_product_price(self, product_id):
-        pass
+    def get_products_avg_price(self, request, product_id):
+        warehouse_items = WarehouseItem.objects.filter(product_id=product_id)
 
-    def get_max_product_price(self, product_id):
-        pass
+        res = warehouse_items.aggregate(Avg('price'))
+        return Response(res)
+
+    def get_products_of_shop(self, request, shop_id):
+        warehouse_items = WarehouseItem.objects.filter(shop_id=shop_id)
+
+        products = Product.objects.filter(pk__in=warehouse_items)
+
+        serializer = ProductSerializer(data=products, many=True)
+        if serializer.is_valid():
+            serializer.save()
+
+        return Response(serializer.data)
 
     def get_category_products_rating_price(self,
                                            request,

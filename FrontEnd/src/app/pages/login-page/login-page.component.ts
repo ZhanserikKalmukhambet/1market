@@ -22,9 +22,11 @@ export class LoginPageComponent implements OnInit{
     this.loginError = true;
   }
   login() {
+    console.log(this.person)
     this.loginService.logIn(this.person.email, this.person.password).subscribe((data) => {
       localStorage.setItem('token', data.access);
       const decoded: MyJwtPayload = jwt_decode(data.access);
+      console.log(decoded)
       localStorage.setItem('id', String(decoded.user_id));
       localStorage.setItem('user_type', decoded.user_type)
       this.router.navigate([`/`]);

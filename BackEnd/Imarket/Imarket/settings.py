@@ -24,28 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = 'django-insecure-s0_0m0c*g+7t+_)y1l=x^aij)pc_za(f0-9)d^ltkpnqe2##g-'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-REST_FRAMEWORK = {
-
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-
-        'rest_framework.authentication.SessionAuthentication',
-
-        'rest_framework.authentication.BasicAuthentication',
-
-        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ]
-}
-
 
 # Application definition
 
@@ -59,11 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third party applications
-    'rest_framework.authtoken',
     'rest_framework',
     'corsheaders',
     'drf_yasg',
-    'django.contrib.postgres',
     'rest_framework_simplejwt',
 
     # internal applications
@@ -75,10 +58,9 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
 }
 
@@ -131,12 +113,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'imarket',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'kbtu',
-        # 'HOST': 'localhost',
-        # 'PORT': '5432',
     }
 }
 
@@ -188,9 +164,6 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_USER = 'django@gmail.com'
-EMAIL_HOST_PASSWORD = 'django'
-
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 

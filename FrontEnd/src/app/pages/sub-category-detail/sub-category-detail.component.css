@@ -37,7 +37,7 @@ ngb-rating {
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 0px;
   text-transform: capitalize;
   color: #00A2DC;
   font-size: 14px;

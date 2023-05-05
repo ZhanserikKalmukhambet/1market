@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {BasketItem, Image, Order, OrderItem, Product, SubCategoryBack} from "../../models";
+import {BasketItem, Image, Order, OrderItem, Price, Product, Shop, SubCategoryBack} from "../../models";
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,9 +21,9 @@ export class ProductService {
   }
   // path('categories/<int:category_id>/products/',
   // ProductViewSet.as_view({'get': 'get_category_products'}), name='list of category products'),
-  getMinPrice(product_id: number): Observable<number> {
-    return this.client.get<number> (
-      `${this.BASE_URL}/`
+  getMinPrice(product_id: number): Observable<Price> {
+    return this.client.get<Price> (
+      `${this.BASE_URL}/products/${product_id}/avg_price/`
     )
   }
 
@@ -39,6 +42,21 @@ export class ProductService {
   getSubcategoryProducts(catid: number, subcatid: number): Observable<Product[]> {
     return this.client.get<Product[]> (
       `${this.BASE_URL}/categories/${catid}/subcategories/${subcatid}/products/`
+    )
+  }
+  getProductsOfShop(s_id: number): Observable<Product[]> {
+    return this.client.get<Product[]> (
+      `${this.BASE_URL}/shops/${s_id}/products/`
+    )
+  }
+  getShopsOfCategory(cat_id: number): Observable<Shop[]> {
+    return this.client.get<Shop[]> (
+      `${this.BASE_URL}/categories/${cat_id}/shops/`
+    )
+  }
+  getShopsOfSubCategory(subCat_id: number): Observable<Shop[]> {
+    return this.client.get<Shop[]> (
+      `${this.BASE_URL}/subcategories/${subCat_id}/shops/`
     )
   }
 
@@ -65,7 +83,7 @@ export class ProductService {
 
   getProduct(p_id: number): Observable<Product> {
     return this.client.get<Product> (
-      `${this.BASE_URL}/products/${p_id}/`
+      `${this.BASE_URL}/products/${p_id}`
     )
   }
 

@@ -1,3 +1,5 @@
+import {Observable} from "rxjs";
+
 export interface Order {
   id: number;
   user: authUser;
@@ -25,10 +27,12 @@ export interface WarehouseItem {
 
 
 export interface Shop {
+
+  id: number;
   name: string;
   address: string;
-  rating: number;
-  sellerID: number;
+  // rating: number;
+  seller: number;
 }
 
 export interface authUser{
@@ -37,6 +41,7 @@ export interface authUser{
 }
 
 export interface nonAuthUser{
+  id: number;
   first_name: string;
   last_name: string;
   username: string;
@@ -81,11 +86,15 @@ export interface Product {
   description : string;
   rating : number;
   subCategory_id: number;
-
+  price: number;
 }
 
+
 export interface Image {
-  link: string;
+  image: string;
+}
+export interface Price {
+  price__avg: number;
 }
 export interface BasketItem {
   id : number;
@@ -100,4 +109,14 @@ export interface ItemInBusket {
   shop_name : string;
   priceInShop : number;
   mainImage : string;
+}
+export interface ProductInCategoryDetail {
+  id: number;
+  name : string;
+  main_image : string;
+  is_active : boolean;
+  description : string;
+  rating : number;
+  subCategory_id: number;
+  price : number;
 }

@@ -7,17 +7,15 @@
       <h2>Все категории</h2>
       <div class="all-category-in-category-detail-div">
         <a class="currentCategory" [ngStyle]="{'color': category.name === currentCategory.name ? 'black' : '##00A2DC',
-                                  'fontWeight': category.name === currentCategory.name ? 'bold' : '##normal',
-                                  'fontSize': category.name === currentCategory.name ? '16px' : '15px',
                                   'marginBottom' : category.name === currentCategory.name ? '18px' : '3px'}
                         " href="" *ngFor="let category of categories">
-          <a class="currentSubCategory" *ngIf="category.name === currentCategory.name" style="margin: 45px 0 5px 30px">
+          <a class="currentSubCategory" *ngIf="category.name === currentCategory.name" style="margin: 45px 0 5px 15px">
             <img style='filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(3deg) brightness(17%) contrast(102%); width: 8px; margin-right: 5px' src="../../../assets/media/icons/rounded-arrow.png" alt="">
             <span>{{currentSubCategory.name | titlecase}}</span>
           </a>
           <img [ngStyle]="{'width': category.name === currentCategory.name ? '8px' : '18px',
                           'filter': category.name === currentCategory.name ? 'invert(0%) sepia(100%) saturate(0%) hue-rotate(3deg) brightness(17%) contrast(102%)' : '##normal',
-                                  'marginLeft' : category.name === currentCategory.name ? '18px' : '3px'}"
+                                  'marginLeft' : category.name === currentCategory.name ? '10px' : '3px'}"
                             src="../../../assets/media/icons/rounded-arrow.png" alt=""> {{category.name | lowercase}}
         </a>
 

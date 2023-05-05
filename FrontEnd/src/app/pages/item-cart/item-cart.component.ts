@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Product} from "../../models";
+import {Image, Price, Product} from "../../models";
 import {ProductService} from "../../services/product/product.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -11,31 +11,44 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ItemCartComponent implements OnInit{
   // @Input() item !: Product;
-  mainImage : string = "assets/media/images/Products/Iphone14ProMax256GbPink.jpg"
+  mainImage : string = '';
   item : Product;
+  images : Image[];
   constructor(private productService : ProductService, private route: ActivatedRoute) {
     this.item = {} as Product;
+    this.images = [];
   }
   logged: boolean = false;
-  price : number | undefined;
+
   isCustomer: boolean = false;
   isSeller: boolean = false;
   ngOnInit(): void {
-    this.item.description = this.item.description.replace(/_/g, '<br>');
-    if(localStorage.getItem('logged') == 'true') this.logged = true;
-    if(localStorage.getItem('isCustomer') == 'true') this.isCustomer = true;
-    if(localStorage.getItem('isSeller') == 'true') this.isSeller = true;
-
     this.route.paramMap.subscribe((params) =>{
-      const id = Number(params.get('id'));
+      const id = Number(params.get('p_id'));
 
       this.productService.getProduct(id).subscribe((product) => {
         this.item = product;
+        this.getMinPrice(this.item.id).then((result) => {
+          this.item.price = <number>result?.price__avg;
+        })
+        this.mainImage = this.item.main_image;
       });
-      this.productService.getMinPrice(id).subscribe((data) => {
-        this.price = data;
+      this.productService.getProductImages(id).subscribe((data) => {
+        this.images = data;
+        console.log(this.images)
       })
     })
+    this.item.description = this.item.description.replace(/_/g, '<br>');
+    if(localStorage.getItem('token') ) this.logged = true;
+    if(localStorage.getItem('user_type') == 'Customer') this.isCustomer = true;
+    if(localStorage.getItem('user_type') == 'Seller') this.isSeller = true;
+
+
+
+  }
+  async getMinPrice(id: number): Promise<Price | undefined>{
+    const data = await this.productService.getMinPrice(id).toPromise();
+    return data
   }
 
   changeMainImage(event: any){

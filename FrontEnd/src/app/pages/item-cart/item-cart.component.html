@@ -1,5 +1,5 @@
 <app-header></app-header>
-<app-categories-nav></app-categories-nav>
+<!--<app-categories-nav></app-categories-nav>-->
 <div class="item-cart">
   <span class="category-of-item">
     <div>1Market Магазин <img src="../../../assets/media/icons/right-arrow2.svg" alt=""> </div>
@@ -13,29 +13,17 @@
         <img [(ngModel)]="mainImage" [src]="mainImage" alt="">
       </div>
       <div class="item-other-images">
-        <div>
-          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink.jpg" alt="">
+        <div *ngFor="let im of images">
+          <img (click)="changeMainImage($event)" src="http://localhost:8000{{im.image}}" alt="">
         </div>
-        <div>
-          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink1.jpg" alt="">
-        </div>
-        <div>
-          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink2.jpg" alt="">
-        </div>
-        <div>
-          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink3.jpg" alt="">
-        </div>
-        <div>
-          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink4.jpg" alt="">
-        </div>
-        </div>
+      </div>
     </div>
     <div class="item-cart-info">
       <h2>{{item.name}}</h2>
       <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="false"></ngb-rating>
-      <div class="price" *ngIf="isCustomer">
+      <div class="price">
         <p>Цена</p>
-        <span>{{price}} т</span>
+        <span>{{item.price}} т</span>
       </div>
       <div class="item-description">
         <p [innerHTML]="item.description"></p>

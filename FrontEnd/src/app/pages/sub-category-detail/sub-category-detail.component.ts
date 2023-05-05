@@ -45,24 +45,11 @@ export class SubCategoryDetailComponent implements OnInit {
       this.categoryService.getCategory(id).subscribe((category) =>{
         this.currentCategory = category;
       })
-      this.categoryService.getSubCategory(id, s_id).subscribe((subCategory) =>{
-        this.currentSubCategory = subCategory;
-      })
       this.productService.getSubcategoryProducts(id, s_id).subscribe( (data) => {
-        this.products = data
+        this.products = data;
       })
     })
     this.getCategories()
 
-    const myDiv = document.querySelectorAll('.currentCategory');
-    console.log(myDiv)
-    // @ts-ignore
-    for (let div of myDiv) {
-      // console.log(div)
-      if (div.innerText === this.currentCategory) {
-        div.style.color = 'black';
-        div.style.fontWeight = 'bold';
-      }
-    }
   }
 }
