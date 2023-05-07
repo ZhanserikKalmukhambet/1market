@@ -8,26 +8,27 @@ The app is marketplace similar to a kaspi.kz/shop. The application allows seller
 - Angular
 - SQLite
 
-**Features**
+### **Features**
 
-Some of the main features include:
-User authentication and authorization.
-Create, edit, and delete products, orders, shops.
-Search bar to find products based on keywords
-Pagination to view products.
-Sorting options to order goods by rating, price.
-Responsive design for web browser.
-
-
-**Future Development**
-Social sharing options for products and sellers/shops
-Comments section for users to leave feedback
-Advanced search capabilities with filtering options
-AI chatbot assistant
+- Some of the main features include:
+- User authentication and authorization.
+- Create, edit, and delete products, orders, shops.
+- Search bar to find products based on keywords
+- Pagination to view products.
+- Sorting options to order goods by rating, price.
+- Responsive design for web browser.
 
 
+### **Future Development**
+- AI chatbot assistant
+- Social sharing options for products and sellers/shops
+- Comments section for users to leave feedback
+- Advanced search capabilities with filtering options
 
-**Installation**
+
+
+
+### **Installation**
  
  To install and run 1market, follow these steps:
 
