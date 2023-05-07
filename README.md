@@ -2,13 +2,13 @@
 
 The app is marketplace similar to a kaspi.kz/shop. The application allows sellers to sell their products, create their own shop. Users can purchase items and make orders. App provides features such as a search bar, pagination, and sorting options to help users navigate their content more easily. 
 
-﻿# Technology Stack
+##Technology Stack
 
 - Django
 - Angular
 - SQLite
 
-﻿# Features
+##Features
 
 Some of the main features include:
 User authentication and authorization.
@@ -19,7 +19,7 @@ Sorting options to order goods by rating, price.
 Responsive design for web browser.
 
 
-﻿# Future Development
+##Future Development
 Social sharing options for products and sellers/shops
 Comments section for users to leave feedback
 Advanced search capabilities with filtering options
@@ -27,11 +27,11 @@ AI chatbot assistant
 
 
 
-﻿# Installation
+##Installation
  
  To install and run 1market, follow these steps:
 
-## For backend:
+#### For backend:
 
 1) Install Python: 1market project requires Python 3.6+ to be installed on your system. You can download Python from the official website (https://www.python.org/downloads/). Choose the version of Python that matches your operating system and follow the installation instructions.
 
@@ -65,7 +65,7 @@ Install Django: Once you have activated the virtual environment, you can install
 
 
 
-## For frontend:
+####For frontend:
 
 To install and run angular, follow these steps:
 
