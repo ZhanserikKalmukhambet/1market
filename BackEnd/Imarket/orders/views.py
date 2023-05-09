@@ -3,11 +3,9 @@ from rest_framework.response import Response
 from rest_framework import status
 import json
 from shop.models import WarehouseItem
-from users.models import User
 from .models import Order, OrderItem
 
 from .serializers import OrderSerializer, OrderItemSerializer
-from users.permissions import IsAdminOrReadOnly, IsCustomer
 
 
 def get_last_order(user_id):
@@ -20,12 +18,12 @@ def get_last_order(user_id):
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
-    permission_classes = (IsAdminOrReadOnly, IsCustomer)
+    # permission_classes = (IsAdminOrReadOnly, IsCustomer)
 
     def purchase_orderitems_in_order(self, request, user_id):  # aka: purchase_orderitems_in_cart
         last_order = get_last_order(user_id)
         serializer = OrderSerializer(instance=last_order, data=request.data)
-        if (user_id != request.data["user"]):
+        if user_id != request.data["user"]:
             return Response({"error": "user_id must be same as in URL as in BODY"}, status=status.HTTP_400_BAD_REQUEST)
         if serializer.is_valid():
             serializer.save()
@@ -40,30 +38,29 @@ class OrderViewSet(viewsets.ModelViewSet):
 class OrderItemViewSet(viewsets.ModelViewSet):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
-    permission_classes = (IsAdminOrReadOnly, IsCustomer)
+    # permission_classes = (IsAdminOrReadOnly, IsCustomer)
 
     def get_order_items_in_cart(self, request, user_id):
         last_order = get_last_order(user_id)
-        if (last_order == -1):
+        if last_order == -1:
             return Response({"message": "you are seller or please create cart"})
 
         queryset = OrderItem.objects.filter(order=last_order)
         serializer = OrderItemSerializer(queryset, many=True)
         products = []
-        # print(f"\n\n----{WarehouseItem.objects.get(id=(json.loads(json.dumps(serializer.data[0]))['warehouse_item']))}--\n\n")
         for ordered_dicts in serializer.data:
             product_in_cart = json.loads(json.dumps(ordered_dicts))
             whi = WarehouseItem.objects.get(id=product_in_cart['warehouse_item'])
-            # print("->", product_in_cart['quantity'])
             item = {
+                "order_item_id": product_in_cart['id'],
+                "product_id": whi.product.id,
                 "name": whi.product.name,
                 "quantity": product_in_cart['quantity'],
                 "shop_name": whi.shop.name,
                 "priceInThisShop": whi.price,
             }
             products.append(item)
-        # print(products)
-        # return Response(serializer.data)
+
         return Response(products)
 
     def get_user_orders(self, request, user_id):
@@ -75,7 +72,32 @@ class OrderItemViewSet(viewsets.ModelViewSet):
         # user_id = request.user.id # ? permissions
         queryset = OrderItem.objects.filter(order_id=order_id)
         serializer = OrderItemSerializer(queryset, many=True)
-        return Response(serializer.data)
+        products = []
+        # print(f"\n\n----{WarehouseItem.objects.get(id=(json.loads(json.dumps(serializer.data[0]))['warehouse_item']))}--\n\n")
+        for ordered_dicts in serializer.data:
+            product_in_cart = json.loads(json.dumps(ordered_dicts))
+            whi = WarehouseItem.objects.get(id=product_in_cart['warehouse_item'])
+            # print("\n\n---->", product_in_cart)
+            order = Order.objects.get(id=order_id)
+            # print(order)
+            item = {
+                "order_item_id": product_in_cart['id'],
+
+                "delivery_date": order.delivery_date,
+                "delivery_address": order.delivery_address,
+                "delivery_price": order.delivery_price,
+
+                "product_id": whi.product.id,
+                "product_name": whi.product.name,
+                "quantity": product_in_cart['quantity'],
+                "shop_name": whi.shop.name,
+                "priceInThisShop": whi.price,
+            }
+            products.append(item)
+        # print(products)
+        # return Response(serializer.data)
+        return Response(products)
+
 
     def delete_order_item_from_order(self, request, orderitem_id):  # aka: delete_orderitem_from_cart
         try:
@@ -89,11 +111,9 @@ class OrderItemViewSet(viewsets.ModelViewSet):
         deleting_order_item.delete()
         return Response({'message': 'deleted'}, status=status.HTTP_204_NO_CONTENT)
 
-
-
     def add_order_item_to_order(self, request, user_id):  # aka: add_product_to_cart
         last_order = get_last_order(user_id)
-        if (last_order == -1):
+        if last_order == -1:
             return Response({"message": "you are seller or please create cart"})
 
         data = request.data

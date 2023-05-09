@@ -1,31 +1,35 @@
 <!--<app-categories-nav></app-categories-nav>-->
 <app-header></app-header>
 <div class="basket-page">
-  <h2>Корзина 1Market</h2>
+
   <div *ngIf="isEmpty">
+    <h2 style="font-size: 24px">Корзина 1Market</h2>
     <div>
       <img src="assets/media/icons/empty-cart.svg" alt="">
     </div>
     <h2>Корзина пуста</h2>
     <span>Посмотрите предложения на странице товаров</span>
-    <a href="/categories/1"><button>На страницу товаров</button></a>
+    <a href="/categories/0"><button>На страницу товаров</button></a>
   </div>
   <div *ngIf="!isEmpty">
-    <app-item-in-basket
-      *ngFor="let item of products "
-      [item]="item"
-    ></app-item-in-basket>
+    <h2 style="font-size: 24px">Корзина 1Market</h2>
+    <span class="allItems">
+      <app-item-in-basket
+        *ngFor="let item of OrderItem "
+        [item]="item"
+      ></app-item-in-basket>
+    </span>
+
   </div>
   <div class="basket-pay ssss mb-4" *ngIf="!isEmpty">
-    <h2>Общая сумма:</h2>
-    <p>1500тг</p>
-
-      <textarea class="w-75" placeholder="Введите адрес доставки" name="" id="" cols="30" rows="3"></textarea>
+    <h2>Общая сумма: {{totalSum}}тг</h2>
+      <textarea class="w-75" placeholder="Введите адрес доставки" name="" id="" cols="30" rows="3" [(ngModel)]="selectedAddress"></textarea>
     <label>
       Выберите день для получения доставки:
-      <input type="date" name="party" min="2023-04-23" max="2023-04-30" />
+      <input type="date" name="party" min="2023-05-05" max="2023-05-30" [(ngModel)]="selectedDate"/>
     </label>
-    <button class="btn">Заказать</button>
+    <button class="btn" (click)="purchaseCart(true, user_id, selectedAddress, selectedDate, totalSum)">Заказать</button>
+
   </div>
 </div>
 

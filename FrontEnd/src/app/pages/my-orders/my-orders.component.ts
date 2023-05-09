@@ -1,49 +1,38 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Order, OrderItem} from "../../models";
+import {OrderService} from "../../services/order/order.service";
 
 @Component({
   selector: 'app-my-orders',
   templateUrl: './my-orders.component.html',
   styleUrls: ['./my-orders.component.css']
 })
-export class MyOrdersComponent {
+export class MyOrdersComponent implements OnInit{
   isEmpty : boolean = false;
-  products = [
-    {
-      "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",
-      "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-      "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-      "price": 707,
-      "rating": 4,
-      "count" : 4,
-      "main_image" : "sdf",
-      "is_active" : true,
-      "category" : "sd",
-      "subCategory" : "sd"
-    },
+  orders : Order[] ;
+  user_id: number = 0;
 
-    {
-      "id": "a45eb5d5-d21b-4c14-8511-6934ee84936c",
-      "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-      "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-      "price": 520,
-      "rating": 3,
-      "count" : 4,
-      "main_image" : "sdf",
-      "is_active" : true,
-      "category" : "sd",
-      "subCategory" : "sd"
-    },
-    {
-      "id": "a45eb5d5-d21b-4c14-8511-6934ee84936c",
-      "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-      "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-      "price": 520,
-      "rating": 3,
-      "count" : 4,
-      "main_image" : "sdf",
-      "is_active" : true,
-      "category" : "sd",
-      "subCategory" : "sd"
-    }
-  ]
+  constructor(private orderService : OrderService) {
+    this.orders = [];
+    this.currentOrderItems = [];
+    this.user_id = Number(localStorage.getItem('id'));
+  }
+
+  ngOnInit() {
+    this.orderService.getOrders(this.user_id).subscribe((data) => {
+      this.orders = data;
+      this.currentOrderItems = this.orders[0].order_items
+      for(let i = 0; i < this.orders.length; i++){
+        this.orderService.getOrderItemsOfOrder(this.orders[i].id).subscribe((oi) => {
+          // @ts-ignore
+          this.orders[i].order_items = oi;
+        })
+      }
+    })
+  }
+  currentOrderItems: OrderItem[]  ;
+
+  changeCurrentOrderItem(order_item: OrderItem[]) {
+    this.currentOrderItems = order_item;
+  }
 }

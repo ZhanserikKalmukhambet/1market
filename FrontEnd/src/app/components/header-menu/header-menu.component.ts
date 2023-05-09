@@ -8,7 +8,9 @@ import {Component, OnInit} from '@angular/core';
 export class HeaderMenuComponent implements OnInit{
   isSeller: boolean | undefined;
   isCustomer: boolean | undefined;
+  u_id : number | undefined
   ngOnInit() {
+    this.u_id = Number(localStorage.getItem('id'));
     if(localStorage.getItem('user_type')=='Seller') this.isSeller = true;
     if(localStorage.getItem('user_type')=='Customer') this.isCustomer = true;
   }

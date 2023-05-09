@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class CategoryService {
 
-  BASE_URL = 'http://127.0.0.1:8000'
+  BASE_URL = 'http://localhost:8000'
 
   constructor(private client: HttpClient) { }
 
@@ -24,8 +24,7 @@ export class CategoryService {
   }
   getProducts(category_id: number): Observable<Product[]> {
     return this.client.get<Product[]>(
-      // "${this.BASE_URL}/api/categories/${category_id}/products/"
-      `https://api.jsonserver.io/categories/${category_id}/products`
+      "${this.BASE_URL}/api/categories/${category_id}/products/"
     )
   }
 
@@ -35,9 +34,9 @@ export class CategoryService {
       `${this.BASE_URL}/api/categories/${category_id}`
     )
   }
-  getSubCategory(category_id: number, subCategory_id: number): Observable<SubCategoryBack> {
-    return this.client.get<SubCategoryBack>(
-      `${this.BASE_URL}/api/categories/${category_id}/subcategories/${subCategory_id}`
+  getSubCategory(subCategory_id: number): Observable<any> {
+    return this.client.get<any>(
+      `${this.BASE_URL}/api/subcategories/${subCategory_id}/name/`
     )
   }
 

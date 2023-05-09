@@ -32,6 +32,8 @@ import { ItemInMyOrdersComponent } from './components/item-in-my-orders/item-in-
 import { ItemInSellerProductsComponent } from './components/item-in-seller-products/item-in-seller-products.component';
 import { SellerProductsComponent } from './pages/seller-products/seller-products.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { MySoldProductsComponent } from './pages/my-sold-products/my-sold-products.component';
+import { AllCategoryComponent } from './pages/all-category/all-category.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { JwtModule } from '@auth0/angular-jwt';
     MyOrdersComponent,
     ItemInMyOrdersComponent,
     ItemInSellerProductsComponent,
-    SellerProductsComponent
+    SellerProductsComponent,
+    MySoldProductsComponent,
+    AllCategoryComponent
   ],
 
   imports: [

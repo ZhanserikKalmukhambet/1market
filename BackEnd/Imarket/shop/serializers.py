@@ -12,4 +12,4 @@ class ShopSerializer(serializers.ModelSerializer):
 class WarehouseItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = WarehouseItem
-        fields = '__all__'
+        fields = ['id', 'product', 'shop', 'price', 'quantity']

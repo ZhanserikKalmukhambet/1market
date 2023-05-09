@@ -10,11 +10,13 @@ urlpatterns = [
          SubCategoryViewSet.as_view({'get': 'get_subcategories_of_category'})),
     path('categories/<int:category_id>/subcategories/<int:subcat_id>/products/',
          ProductViewSet.as_view({'get': 'get_subcategory_products'})),
+    path('subcategories/<int:sabcategory_id>/name/',
+             ProductViewSet.as_view({'get': 'get_subcategory_name'}),
+             name='get subcategory name '),
     path('products/rating/<int:min>/',
          ProductViewSet.as_view({'get': 'get_products_min_rating'}), name='products with minimum rate'),
-    path('products/<int:product_id>/put_rating/<int:new_rating>/',
-         ProductViewSet.as_view({'get': 'put_rating_to_product'}), name='rate product'),
-
+     path('products/<int:product_id>/put_rating/',
+             ProductViewSet.as_view({'patch': 'put_rating_to_product'}), name='rate product'),
     path('products/<int:product_id>/product_images/',
          ProductImageViewSet.as_view({'get': 'product_images_of_product'}), name='product images of product'),
     path('popular_products/',
@@ -24,7 +26,10 @@ urlpatterns = [
 
     path('products/searching/<str:query>/',
          ProductViewSet.as_view({'get': 'searching'}), name='search product'),
-
+    path('products/<int:product_id>/avg_price/',
+         ProductViewSet.as_view({'get': 'get_products_avg_price'}), name='avg price'),
+    path('shops/<int:shop_id>/products/',
+         ProductViewSet.as_view({'get': 'get_products_of_shop'}), name='shop products')
 ]
 
 r = routers.DefaultRouter()

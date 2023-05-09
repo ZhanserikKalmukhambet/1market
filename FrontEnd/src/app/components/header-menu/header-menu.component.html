@@ -1,5 +1,5 @@
 <div class="header-menu">
-  <a routerLink="/basket" href="" *ngIf="isCustomer">
+  <a  href="/basket/{{u_id}}" *ngIf="isCustomer">
     <div class="basket basket1">
       <img src="assets/media/icons/basket.svg" alt="">
       <p>Корзина</p>
@@ -13,6 +13,7 @@
     <div class="user-menu">
       <a href="/myOrders" *ngIf="isCustomer">Мои заказы</a>
       <a href="/myProducts" *ngIf="isSeller">Мои товары</a>
+      <a href="/mySoldProducts" *ngIf="isSeller">Мои проданные товары</a>
       <a href="" (click)="logout()">Выйти</a>
     </div>
   </div>

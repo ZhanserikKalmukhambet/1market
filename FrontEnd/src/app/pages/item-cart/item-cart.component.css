@@ -12,7 +12,13 @@
   color: #00A2DC;
   font-size: 15px;
 }
-
+.evaluate{
+  border: none;
+  background-color: orangered;
+  color: white;
+  padding: 10px;
+  border-radius: 5px ;
+}
 .item-info{
   margin-top: 10px;
   background-color: white;
@@ -154,4 +160,15 @@
   padding: 10px 20px;
   border-radius: 10px;
   color: white;
+}
+.quant{
+  display: flex;
+  align-items: center;
+}
+.quant > form >input{
+  height: 100%;
+  width: 50px;
+}
+.quant > form{
+  margin-right: 5px;
 }

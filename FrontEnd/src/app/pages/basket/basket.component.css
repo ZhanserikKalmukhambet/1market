@@ -4,7 +4,6 @@
   gap: 30px;
   margin-top: 40px;
   display: flex;
-  flex-direction: column;
 }
 
 .basket-page > h2{
@@ -13,15 +12,20 @@
 }
 .basket-page> div{
   background-color: white;
-  width: 70%;
-  padding: 30px;
+  padding: 10px;
   border: 1px solid #e1e1e1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  /*margin: auto;*/
+  box-sizing: border-box;
+}
+
+.basket-page> div:first-child{
+  width: 60%;
+}
+.basket-page> div:last-child{
+  width: 30%;
 }
 .basket-page> div  button{
   background-color: orangered;
@@ -38,4 +42,18 @@
   padding: 50px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+.allItems {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px
+}
+.allItems > app-item-in-basket{
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+}
+.basket-pay{
+  height: 300px;
 }

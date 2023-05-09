@@ -1,45 +1,45 @@
+import {Observable} from "rxjs";
+
 export interface Order {
   id: number;
-  user: authUser;
+  user: number;
   completed: boolean;
-  deliveryDate: Date;
-  deliveryAddress: string;
-  deliveryPrice: number;
+  delivery_date: Date;
+  delivery_address: string;
+  delivery_price: number;
+  order_items: OrderItem[];
 }
 
 
 export interface OrderItem {
-  id: number;
-  order: Order;
-  warehouseItem: WarehouseItem;
+  order_item_id: number;
+  delivery_date: string;
+  delivery_address :string;
+  delivery_price: number;
+  product_id: number;
+  name: string;
+  priceInThisShop: number
+  shop_name: string
   quantity: number;
 }
+
 
 export interface WarehouseItem {
   id: number;
-  product: Product;
-  shop: Shop;
+  product_id: number;
+  shop_id: number;
+  price: string;
   quantity: number;
-  price: number;
-}
-
-
-export interface Shop {
-<<<<<<< HEAD
   name: string;
-  address: string;
-  rating: number;
-  sellerID: number;
-=======
+}
+export interface Shop {
+
   id: number;
   name: string;
-  rating: number;
   address: string;
-  seller: authUser;
->>>>>>> 2d527695d50cc5993ae2dcaf695b9088df2dd35b
+  // rating: number;
+  seller: number;
 }
-
-
 
 export interface authUser{
   username: string;
@@ -47,6 +47,7 @@ export interface authUser{
 }
 
 export interface nonAuthUser{
+  id: number;
   first_name: string;
   last_name: string;
   username: string;
@@ -84,16 +85,44 @@ export interface SubCategoryBack {
 }
 
 export interface Product {
-  id: string;
+  id: number;
   name : string;
   main_image : string;
   is_active : boolean;
   description : string;
   rating : number;
   subCategory_id: number;
+  price: number;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 2d527695d50cc5993ae2dcaf695b9088df2dd35b
+export interface Image {
+  image: string;
+}
+export interface Price {
+  price__avg: number;
+}
+export interface BasketItem {
+  id : number;
+  quantity : number;
+  order_id : number;
+  warehouse_id : number
+}
+export interface ItemInBusket {
+  id : number;
+  name : string;
+  quantity : number;
+  shop_name : string;
+  priceInShop : number;
+  mainImage : string;
+}
+export interface ProductInCategoryDetail {
+  id: number;
+  name : string;
+  main_image : string;
+  is_active : boolean;
+  description : string;
+  rating : number;
+  subCategory_id: number;
+  price : number;
+}

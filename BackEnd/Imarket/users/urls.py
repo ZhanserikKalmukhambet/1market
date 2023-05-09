@@ -1,11 +1,10 @@
 from django.urls import path
 
-from .serializers import CustomTokenObtainPairView
-from .views import send_to_email
-from .views import RegisterView
+from .views import CustomTokenObtainPairView
+from .views import send_to_email, RegisterView
 from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView, TokenVerifyView,
+    TokenRefreshView,
+    TokenVerifyView,
 )
 
 urlpatterns = [

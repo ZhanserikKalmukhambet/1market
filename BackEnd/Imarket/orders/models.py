@@ -7,12 +7,9 @@ from users.choices import Role
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User,
-                             on_delete=models.CASCADE,
-                             null=True,
-                             limit_choices_to={'user_type': Role.CUSTOMER})
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, limit_choices_to={'user_type': Role.CUSTOMER})
     completed = models.BooleanField(default=False)
-    delivery_date = models.DateTimeField(verbose_name='Delivery Date', default=datetime.datetime.now)
+    delivery_date = models.DateTimeField(verbose_name='Delivery Date', null=True)
     delivery_address = models.CharField(max_length=255, verbose_name='Address of deliver', default="address")
     delivery_price = models.FloatField(default=0)
 

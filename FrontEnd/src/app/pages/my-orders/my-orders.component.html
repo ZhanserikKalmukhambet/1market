@@ -1,20 +1,39 @@
 <app-header></app-header>
-<div class="basket-page">
-  <h2>Мои покупки 1Market</h2>
-  <div *ngIf="isEmpty">
-    <div>
-      <img src="assets/media/icons/empty-cart.svg" alt="">
+<h2 style="font-size: 24px; font-weight: bold; text-align: center; margin-top: 30px">Мои покупки 1Market</h2>
+<div class="basket-page" *ngIf="!isEmpty">
+
+  <div class="left-side-of-basket-page">
+    <div *ngFor="let order of orders.slice(0, orders.length - 1)" class="">
+        <button type="button"  (click)="changeCurrentOrderItem(order.order_items)">Заказ номер: {{order.id}}</button>
     </div>
-    <h2>Вы еще не сделали никаких покупок!</h2>
-    <span>Посмотрите предложения на странице товаров</span>
-    <a  href="/categories/1"><button>На страницу товаров</button></a>
   </div>
-  <div *ngIf="!isEmpty">
-    <app-item-in-my-orders
-      *ngFor="let item of products "
-      [item]="item"
-    ></app-item-in-my-orders>
+  <div class="right-side-of-basket-page">
+    <div class="items">
+      <div *ngFor="let oi of currentOrderItems">
+        <h2>{{oi.name}}</h2>
+        <h2>{{oi.quantity}}шт</h2>
+        <h2>Магазин: {{oi.shop_name}}</h2>
+        <h2>{{oi.priceInThisShop}}тг</h2>
+      </div>
+    </div>
+
+
+    <div class="total">
+        <h2>Общая сумма: {{currentOrderItems[0].delivery_price}}тг</h2>
+        <h2>Адресс доставки: {{currentOrderItems[0].delivery_address}}</h2>
+        <h2>Дата доставки: {{currentOrderItems[0].delivery_date}}</h2>
+    </div>
   </div>
 
+</div>
+
+
+<div *ngIf="isEmpty">
+  <div>
+    <img src="assets/media/icons/empty-cart.svg" alt="">
+  </div>
+  <h2>Вы еще не сделали никаких покупок!</h2>
+  <span>Посмотрите предложения на странице товаров</span>
+  <a  href="/categories/1"><button>На страницу товаров</button></a>
 </div>
 

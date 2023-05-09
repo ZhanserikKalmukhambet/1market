@@ -1,49 +1,25 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WarehouseItem} from "../../models";
+import {ProductService} from "../../services/product/product.service";
 
 @Component({
   selector: 'app-seller-products',
   templateUrl: './seller-products.component.html',
   styleUrls: ['./seller-products.component.css']
 })
-export class SellerProductsComponent {
+export class SellerProductsComponent implements OnInit{
   isEmpty : boolean = false;
-  products = [
-    {
-      "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",
-      "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-      "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-      "price": 707,
-      "rating": 4,
-      "count" : 4,
-      "main_image" : "sdf",
-      "is_active" : true,
-      "category" : "sd",
-      "subCategory" : "sd"
-    },
+  products: WarehouseItem[] = [];
+  shop_id: number = 0
+  constructor(private productService: ProductService) {
+    this.shop_id = Number(localStorage.getItem('shop_id'));
+  }
+  ngOnInit() {
 
-    {
-      "id": "a45eb5d5-d21b-4c14-8511-6934ee84936c",
-      "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-      "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-      "price": 520,
-      "rating": 3,
-      "count" : 4,
-      "main_image" : "sdf",
-      "is_active" : true,
-      "category" : "sd",
-      "subCategory" : "sd"
-    },
-    {
-      "id": "a45eb5d5-d21b-4c14-8511-6934ee84936c",
-      "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-      "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-      "price": 520,
-      "rating": 3,
-      "count" : 4,
-      "main_image" : "sdf",
-      "is_active" : true,
-      "category" : "sd",
-      "subCategory" : "sd"
-    }
-  ]
+    this.productService.getWarehouseItemsByShopID(this.shop_id).subscribe((data) => {
+      this.products = data;
+      console.log(data)
+    })
+
+  }
 }

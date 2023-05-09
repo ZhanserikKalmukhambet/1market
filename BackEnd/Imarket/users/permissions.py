@@ -14,7 +14,6 @@ class IsAdminOrReadOnly(permissions.BasePermission):
 #####################
 class IsOwnerOfShop(permissions.BasePermission):
     def has_permission(self, request, view):
-        print("\n\n\n----------has permission------\n\n\n")
         if request.user.is_authenticated:
             if request.user.user_type == Role.CUSTOMER:
                 return view.action in ['list', 'retrieve']

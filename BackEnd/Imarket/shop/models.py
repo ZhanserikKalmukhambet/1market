@@ -1,5 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.db import models
+
+from products.models import Product
 from users.models import User
 from users.choices import Role
 
@@ -33,9 +35,12 @@ class Shop(models.Model):
     def __str__(self):
         return f'{self.name} - rating: ({self.rating})'
 
+    def get_products(self):
+        return self.product_set.all()
+
 
 class WarehouseItem(models.Model):
-    product = models.ForeignKey(to='products.Product', on_delete=models.CASCADE)
+    product = models.ForeignKey(to=Product, on_delete=models.CASCADE)
     shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.IntegerField()

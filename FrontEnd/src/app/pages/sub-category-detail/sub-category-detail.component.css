@@ -37,7 +37,7 @@ ngb-rating {
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 0px;
   text-transform: capitalize;
   color: #00A2DC;
   font-size: 14px;
@@ -53,8 +53,8 @@ ngb-rating {
   text-decoration: none;
   gap: 2px;
   color: black;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: normal;
+  font-size: 14px;
   box-sizing: border-box;
   padding: 3px;
   position: absolute;
@@ -113,5 +113,6 @@ ngb-rating {
 
 }
 .category-detail-right h2 span{
+  font-weight: normal;
   color: #999999;
 }

@@ -4,8 +4,8 @@
   </a>
 
   <form class="header-search-items">
-    <input type="text" placeholder="Введите название товара">
-    <button type="submit">
+    <input type="text" placeholder="Введите название товара" #findInput>
+    <button type="submit" (click)="Find(findInput.value)">
       <img src="../../../assets/media/icons/find.png" alt="">
       Найти
     </button>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {nonAuthUser, Shop} from '../../models';
+import {AuthToken, nonAuthUser, Shop} from '../../models';
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 @Injectable({
@@ -30,12 +30,10 @@ export class RegisterService {
     })
   }
 
-  createShop(name: string, address: string, id: number): Observable<Shop> {
-    return this.client.post<Shop>(`${this.BASE_URL}/api/shops/`, {name, address, id})
-  }
-
-  getLastUserID(): Observable<number>{
-    return this.client.get<number>(`${this.BASE_URL}/api/users/last_id/`)
+  createShop(name: string, address: string, seller: number): Observable<Shop> {
+    return this.client.post<Shop>(`${this.BASE_URL}/api/shops/`,
+      {name, address, seller}
+    )
   }
 
   // sendCodeToEmail(email: string) {
