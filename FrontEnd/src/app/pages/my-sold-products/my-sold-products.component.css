@@ -1,9 +1,10 @@
 .basket-page{
   justify-content: center;
+  align-items: center;
   gap: 30px;
   margin-top: 40px;
   display: flex;
-  /*flex-direction: column;*/
+  flex-direction: column;
 }
 
 .basket-page > h2{
@@ -11,40 +12,17 @@
   font-weight: bold;
 }
 .basket-page> div{
-
-  /*margin: auto;*/
-}
-.left-side-of-basket-page{
   background-color: white;
+  width: 70%;
   padding: 30px;
   border: 1px solid #e1e1e1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
-  height: fit-content;
-  width: 30%;
+  /*margin: auto;*/
 }
-.right-side-of-basket-page > div{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.right-side-of-basket-page{
-  background-color: white;
-  border: 1px solid #e1e1e1;
-  padding: 20px;
-  display: flex;
-  gap: 15px;
-  height: fit-content;
-  width: 60%;
-}
-.items{
-  width: 60%;
-}
-.total{
-  width: 40%;
-}
-
 .basket-page> div  button{
   background-color: orangered;
   padding: 10px 20px;

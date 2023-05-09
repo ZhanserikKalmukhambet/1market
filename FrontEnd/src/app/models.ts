@@ -2,30 +2,36 @@ import {Observable} from "rxjs";
 
 export interface Order {
   id: number;
-  user: authUser;
+  user: number;
   completed: boolean;
-  deliveryDate: Date;
-  deliveryAddress: string;
-  deliveryPrice: number;
+  delivery_date: Date;
+  delivery_address: string;
+  delivery_price: number;
+  order_items: OrderItem[];
 }
 
 
 export interface OrderItem {
-  id: number;
-  order: Order;
-  warehouseItem: WarehouseItem;
+  order_item_id: number;
+  delivery_date: string;
+  delivery_address :string;
+  delivery_price: number;
+  product_id: number;
+  name: string;
+  priceInThisShop: number
+  shop_name: string
   quantity: number;
 }
+
 
 export interface WarehouseItem {
   id: number;
-  product: Product;
-  shop: Shop;
+  product_id: number;
+  shop_id: number;
+  price: string;
   quantity: number;
-  price: number;
+  name: string;
 }
-
-
 export interface Shop {
 
   id: number;

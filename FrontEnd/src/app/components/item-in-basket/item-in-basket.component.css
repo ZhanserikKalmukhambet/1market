@@ -1,16 +1,20 @@
 .item-in-basket{
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   border: 2px solid #e1e1e1;
   padding: 10px;
+  gap: 20px;
   box-sizing: border-box;
   border-radius: 5px;
   transition: .4s;
 }
 .item-in-basket > div{
-  width: 10%;
+  display: flex;
+  gap: 50px;
+
 }
 .item-in-basket > div > img{
   width: 100%;
@@ -30,6 +34,16 @@
   transition: .4s;
 }
 
+.item-in-basket > h2{
+  font-size: 18px;
+}
+.item-in-basket > span{
+  width: 20%;
+}
+.item-in-basket > span > img{
+  width: 100%;
+}
+
 .item-in-basket > button:hover{
   background-color: black;
   cursor: pointer;
@@ -37,12 +51,12 @@
 .item-in-basket:hover{
   border: 2px solid black;
 }
-.item-in-basket > span{
+.item-in-basket  span{
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.item-in-basket > span > h2{
+.item-in-basket  span > h2{
   font-size: 16px;
   font-weight: bold;
 }

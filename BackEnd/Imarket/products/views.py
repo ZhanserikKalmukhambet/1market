@@ -37,17 +37,21 @@ class SubCategoryViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
+
+
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = (IsAdminOrReadOnly,)
+#     permission_classes = (IsAdminOrReadOnly,)
 
     def get_products_avg_price(self, request, product_id):
         warehouse_items = WarehouseItem.objects.filter(product_id=product_id)
 
         res = warehouse_items.aggregate(Avg('price'))
         return Response(res)
-
+    def get_subcategory_name(self, request, sabcategory_id):
+        subcat = SubCategory.objects.get(id=sabcategory_id)
+        return Response({"subcat_name": subcat.name})
     def get_products_of_shop(self, request, shop_id):
         warehouse_items = WarehouseItem.objects.filter(shop_id=shop_id)
 
@@ -117,12 +121,14 @@ class ProductViewSet(viewsets.ModelViewSet):
     def searching_trigram(self, request, query):
         pass
 
-    def put_rating_to_product(self, request, product_id, new_rating) -> Response:
-        product = Product.objects.get(id=product_id)
-        product.rate_cnt = product.rate_cnt + 1
-        product.rating = (product.rating + new_rating) / product.rate_cnt
-        product.save()
-        return Response(data=product.rating, status=status.HTTP_200_OK)
+    def put_rating_to_product(self, request, product_id):
+            rating = request.data['rating']
+
+            product = Product.objects.get(id=product_id)
+            product.rate_cnt = product.rate_cnt + 1
+            product.rating = (product.rating + rating) / product.rate_cnt
+            product.save()
+            return Response(data=product.rating, status=status.HTTP_200_OK)
 
     def get_subcategory_products(self, req, category_id, subcat_id):
         queryset = Product.objects.all().filter(subcategory_id=subcat_id)

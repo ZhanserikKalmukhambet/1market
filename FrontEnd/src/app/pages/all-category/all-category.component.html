@@ -35,33 +35,7 @@
         <span>более 200 000т</span>
       </div>
     </div>
-    <div class="filter-by-sellers-in-category-detail" *ngIf="isCustomer">
-      <h2>Продавцы</h2>
-      <div *ngFor="let sh of shops">
-        <input type="checkbox" (click)="FilterByShops(sh.id, $event)" name="" id="seller1">
-        <span>{{sh.name}}</span>
-      </div>
 
-    </div>
-    <div class="filter-by-rating-in-category-detail" *ngIf="isCustomer">
-      <h2>Рейтинг</h2>
-      <div>
-        <input type="checkbox" name="" id="rate2">
-        <span><ngb-rating [max]="5" [(rate)]="r4" [readonly]="true"></ngb-rating> и выше</span>
-      </div>
-      <div>
-        <input type="checkbox" name="" id="rate3">
-        <span><ngb-rating [max]="5" [(rate)]="r3" [readonly]="true"></ngb-rating> и выше</span>
-      </div>
-      <div>
-        <input type="checkbox" name="" id="rate4">
-        <span><ngb-rating [max]="5" [(rate)]="r2" [readonly]="true"></ngb-rating> и выше</span>
-      </div>
-      <div>
-        <input type="checkbox" name="" id="rate5">
-        <span><ngb-rating [max]="5" [(rate)]="r1" [readonly]="true"></ngb-rating> и выше</span>
-      </div>
-    </div>
   </div>
   <div class="category-detail-right">
     <h2>1Market Магазин <img src="../../../assets/media/icons/right-arrow2.svg" alt=""> <span>{{currentCategory.name | titlecase}}</span></h2>

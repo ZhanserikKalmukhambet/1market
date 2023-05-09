@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../services/product/product.service";
-import {BasketItem, ItemInBusket, Product} from "../../models";
+import {BasketItem, ItemInBusket, OrderItem, Product} from "../../models";
+import {OrderService} from "../../services/order/order.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-basket',
@@ -9,61 +11,36 @@ import {BasketItem, ItemInBusket, Product} from "../../models";
 })
 export class BasketComponent implements OnInit{
   isEmpty : boolean | undefined ;
-  // products = [
-  //   {
-  //     "id": "68c270cb-9660-45bd-8b02-0140ed6a4745",
-  //     "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-  //     "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-  //     "price": 707,
-  //     "rating": 4,
-  //     "count" : 4,
-  //     "main_image" : "sdf",
-  //     "is_active" : true,
-  //     "category" : "sd",
-  //     "subCategory" : "sd"
-  //   },
-  //
-  //   {
-  //     "id": "a45eb5d5-d21b-4c14-8511-6934ee84936c",
-  //     "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-  //     "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-  //     "price": 520,
-  //     "rating": 3,
-  //     "count" : 4,
-  //     "main_image" : "sdf",
-  //     "is_active" : true,
-  //     "category" : "sd",
-  //     "subCategory" : "sd"
-  //   },
-  //   {
-  //     "id": "a45eb5d5-d21b-4c14-8511-6934ee84936c",
-  //     "name": "Apple iPhone 14 Pro Max 256Gb фиолетовый",
-  //     "description" : "harhdfsfjkgnfosnfsffnaskdfnosidfaosdfoasidfmosdfoiass",
-  //     "price": 520,
-  //     "rating": 3,
-  //     "count" : 4,
-  //     "main_image" : "sdf",
-  //     "is_active" : true,
-  //     "category" : "sd",
-  //     "subCategory" : "sd"
-  //   }
-  //   ]
-  products : Product[];
-  basketItems : BasketItem[];
-  itemsInBusket : ItemInBusket[];
-  constructor(private productService : ProductService) {
-    this.products = [];
-    this.basketItems = [];
-    this.itemsInBusket = [];
+  selectedDate: string = '';
+  selectedAddress: string = '';
+  user_id: number = 0;
+  OrderItem : OrderItem[];
+  constructor(private productService : ProductService, private orderService: OrderService, private router: Router) {
+    this.OrderItem = [];
   }
+  totalSum : number = 0;
   ngOnInit() {
     const u_id = localStorage.getItem('id');
-    this.productService.getItemsOfBasket(Number(u_id)).subscribe((basketItems) =>{
-      this.basketItems = basketItems;
-      for(let bi of this.basketItems){
-        console.log(bi)
+    this.user_id = Number(u_id);
+    this.productService.getItemsOfBasket(Number(u_id)).subscribe((OrderItem) =>{
+      this.OrderItem = OrderItem;
+      console.log(this.OrderItem)
+      if(this.OrderItem.length == 0) this.isEmpty = true;
+      console.log(OrderItem)
+      for(let i = 0; i < OrderItem.length; i++){
+        this.totalSum += OrderItem[i].priceInThisShop;
       }
     })
 
   }
+
+  purchaseCart(completed: boolean,user: number, delivery_address: string, delivery_date: string, delivery_price: number) {
+    const needDate = new Date(delivery_date).toJSON()
+    this.orderService.purchaseCart(completed, user, delivery_address, needDate, delivery_price).subscribe(() => {
+      window.alert(`Ваш заказ на ${this.totalSum} успешно оформлен и будет доставлен ${this.selectedAddress}`);
+      this.router.navigate(['/']);
+    })
+  }
+
+
 }

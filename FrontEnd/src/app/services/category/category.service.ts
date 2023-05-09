@@ -34,9 +34,9 @@ export class CategoryService {
       `${this.BASE_URL}/api/categories/${category_id}`
     )
   }
-  getSubCategory(category_id: number, subCategory_id: number): Observable<SubCategoryBack> {
-    return this.client.get<SubCategoryBack>(
-      `${this.BASE_URL}/api/categories/${category_id}/subcategories/${subCategory_id}`
+  getSubCategory(subCategory_id: number): Observable<any> {
+    return this.client.get<any>(
+      `${this.BASE_URL}/api/subcategories/${subCategory_id}/name/`
     )
   }
 

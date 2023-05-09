@@ -1,18 +1,16 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CategoryBack, Price, Product, Shop} from "../../models";
-import {ActivatedRoute, Router} from "@angular/router";
 import {CategoryService} from "../../services/category/category.service";
-import {CategoriesNavComponent} from "../../components/categories-nav/categories-nav.component";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ProductService} from "../../services/product/product.service";
-import {isNumber} from "@ng-bootstrap/ng-bootstrap/util/util";
 
 @Component({
-  selector: 'app-category-detail',
-  templateUrl: './category-detail.component.html',
-  styleUrls: ['./category-detail.component.css']
+  selector: 'app-all-category',
+  templateUrl: './all-category.component.html',
+  styleUrls: ['./all-category.component.css']
 })
+export class AllCategoryComponent implements OnInit{
 
-export class CategoryDetailComponent implements OnInit{
   r1 = 1;
   r2 = 2;
   r3 = 3;
@@ -35,6 +33,7 @@ export class CategoryDetailComponent implements OnInit{
     this.getCategories()
     this.id = 0;
   }
+  pattern : string | null = 'a';
 
   getCategories(){
     this.categoryService.getCategories().subscribe((data) => {
@@ -42,7 +41,17 @@ export class CategoryDetailComponent implements OnInit{
     });
 
     this.route.paramMap.subscribe((params) =>{
-      this.id = Number(params.get('id'));
+      this.pattern = params.get('pattern');
+      this.productService.searchByName(this.pattern).subscribe((productss) => {
+        for(let i = 0; i < productss.length; i++) {
+          this.getMinPrice(productss[i].id).then((result) => {
+            productss[i].price = <number>result?.price__avg;
+            productss[i].main_image = productss[i].main_image.substring(21);
+          })
+        }
+        this.products = productss;
+        this.allProducts = this.products;
+      })
     })
     this.categoryService.getCategory(this.id).subscribe((category) =>{
       this.currentCategory = category;
@@ -51,19 +60,10 @@ export class CategoryDetailComponent implements OnInit{
       console.log(data)
       this.shops = data;
     })
-    this.productService.getCategoryProducts(this.id).subscribe((productss) => {
-      for(let i = 0; i < productss.length; i++) {
-        this.getMinPrice(productss[i].id).then((result) => {
-          productss[i].price = <number>result?.price__avg;
-        })
-      }
-      this.products = productss;
-      this.allProducts = this.products;
-    });
 
-    if(localStorage.getItem('user_type') == 'Seller'){
-      this.isSeller = true;
-    }
+
+
+    if(localStorage.getItem('user_type') == 'Seller') this.isSeller = true;
     if(localStorage.getItem('user_type') == 'Customer') this.isCustomer = true;
   }
 
@@ -74,7 +74,6 @@ export class CategoryDetailComponent implements OnInit{
   allProducts: Product[] = [];
   ngOnInit() {
     this.getCategories()
-
   }
 
   async getMinPrice(id: number): Promise<Price | undefined>{
@@ -94,9 +93,9 @@ export class CategoryDetailComponent implements OnInit{
           'maxprice': `${maxPrice}`
         }
       }).then(() =>{
-        this.minPrice = this.route.snapshot.queryParams['minprice'];
-        this.maxPrice = this.route.snapshot.queryParams['maxprice'];
-        console.log(this.minPrice, this.maxPrice)
+          this.minPrice = this.route.snapshot.queryParams['minprice'];
+          this.maxPrice = this.route.snapshot.queryParams['maxprice'];
+          console.log(this.minPrice, this.maxPrice)
         }
       ).then(() => {
         const data = this.getProductsByPrice(this.minPrice, this.maxPrice)
@@ -132,4 +131,5 @@ export class CategoryDetailComponent implements OnInit{
       });
     }
   }
+
 }

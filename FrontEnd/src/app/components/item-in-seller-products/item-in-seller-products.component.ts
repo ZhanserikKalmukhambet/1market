@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {WarehouseItem} from "../../models";
 
 @Component({
   selector: 'app-item-in-seller-products',
@@ -6,16 +7,5 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./item-in-seller-products.component.css']
 })
 export class ItemInSellerProductsComponent {
-  @Input() item = {
-    "id": "",
-    "name": "",
-    "description" : "",
-    "price": 0,
-    "rating": 0,
-    "count" : 0,
-    "main_image" : "",
-    "is_active" : true,
-    "category" : "",
-    "subCategory" : ""
-  }
+  @Input() item !: WarehouseItem;
 }
