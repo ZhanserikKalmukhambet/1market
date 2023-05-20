@@ -65,7 +65,18 @@ This is an e-commerce platform built with Django (backend) and Angular (frontend
  
  ![Flashback - май 20, 2023 14_33_02](https://github.com/Manapaly/1market/assets/94050043/22df9726-286f-4ef0-b437-20c59a6c4964)
  
- 
+### Coding Process
+
+in Django : 
+
+![Flashback - май 20, 2023 12_50_01](https://github.com/Manapaly/1market/assets/94050043/37a5c18d-e700-4284-9142-84b767bc2a24)
+
+
+in Angular : 
+
+![Flashback - май 20, 2023 12_54_46](https://github.com/Manapaly/1market/assets/94050043/8497fb9d-9e0f-4eab-970a-8c747bc484b2)
+
+
   
 ## Installation and Setup
 
