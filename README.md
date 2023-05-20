@@ -9,7 +9,7 @@ This is an e-commerce platform built with Django (backend) and Angular (frontend
 - The platform uses `restframework_simplejwt` for user authentication and authorization.
 - Users can register as sellers or customers.
 - During registration:
-  - Customers are required to fill in necessary fields like name, address, etc. ![Flashback - май 20, 2023 13_06_40](https://github.com/Manapaly/1market/assets/94050043/f1a54859-0bc1-4bf2-812f-e81816b89614)
+  - Customers are required to fill in necessary fields like name, address, etc.
   - Sellers are required to create a shop by providing the shop name and address.
 
 ### User Permissions and Restrictions
