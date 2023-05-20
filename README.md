@@ -79,8 +79,5 @@ If you wish to contribute to this project, please follow these guidelines:
 
 ## Acknowledgements
 
--
-
- [Django](https://www.djangoproject.com/)
+- [Django](https://www.djangoproject.com/)
 - [Angular](https://angular.io/)
-- [restframework_simplejwt](https://django-rest-framework-simplejwt.readthedocs.io/)
