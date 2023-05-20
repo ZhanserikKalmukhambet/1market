@@ -1,6 +1,8 @@
 # E-commerce Platform
 
-This is an e-commerce platform built with Django (backend) and Angular (frontend). It provides functionality for three different roles: Admin, Customer, and Seller. The platform allows users to perform various actions based on their roles, such as managing products, adding items to the cart, placing orders, and more. User authentication and authorization are implemented using `restframework_simplejwt`.
+This is an e-commerce platform built with Django (backend) and Angular (frontend). It provides functionality for three different roles: Admin, Customer, and Seller. The platform allows users to perform various actions based on their roles, such as managing products, adding items to the cart, placing orders, and more. 
+
+![photo_2023-05-20_12-47-22](https://github.com/Manapaly/1market/assets/94050043/239319b7-5d4e-46ad-954d-3cb89ac41ed4)
 
 ## Features
 
