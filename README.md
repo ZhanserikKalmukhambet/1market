@@ -1,4 +1,4 @@
-# E-commerce Platform
+# 1market
 
 This is an e-commerce platform built with Django (backend) and Angular (frontend). It provides functionality for three different roles: Admin, Customer, and Seller. The platform allows users to perform various actions based on their roles, such as managing products, adding items to the cart, placing orders, and more. 
 
@@ -9,7 +9,7 @@ This is an e-commerce platform built with Django (backend) and Angular (frontend
 - The platform uses `restframework_simplejwt` for user authentication and authorization.
 - Users can register as sellers or customers.
 - During registration:
-  - Customers are required to fill in necessary fields like name, gmail, phone number, etc.  
+  - Customers are required to fill in necessary fields like name, email, phone number, etc.  
  
 ![Flashback - май 20, 2023 13_06_40](https://github.com/Manapaly/1market/assets/94050043/0a16a3e6-6aa5-4c38-a492-48d877071be3)
   
