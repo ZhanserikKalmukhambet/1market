@@ -10,9 +10,11 @@ This is an e-commerce platform built with Django (backend) and Angular (frontend
 - Users can register as sellers or customers.
 - During registration:
   - Customers are required to fill in necessary fields like name, address, etc.  
+ 
 ![Flashback - май 20, 2023 13_06_40](https://github.com/Manapaly/1market/assets/94050043/0a16a3e6-6aa5-4c38-a492-48d877071be3)
   
-  - Sellers are required to create a shop by providing the shop name and address.  
+  - Sellers are required to create a shop by providing the shop name and address.
+    
 ![Flashback - май 20, 2023 13_09_09](https://github.com/Manapaly/1market/assets/94050043/1b16bc68-722f-403b-8efc-1f551610b073)
 
 
