@@ -1,88 +1,86 @@
-﻿# web application - 1market 
+# E-commerce Platform
 
-The app is marketplace similar to a kaspi.kz/shop. The application allows sellers to sell their products, create their own shop. Users can purchase items and make orders. App provides features such as a search bar, pagination, and sorting options to help users navigate their content more easily. 
+This is an e-commerce platform built with Django (backend) and Angular (frontend). It provides functionality for three different roles: Admin, Customer, and Seller. The platform allows users to perform various actions based on their roles, such as managing products, adding items to the cart, placing orders, and more. User authentication and authorization are implemented using `restframework_simplejwt`.
 
-**Technology Stack**
+## Features
 
-- Django
-- Angular
-- SQLite
+### User Authentication and Authorization
 
-### **Features**
+- The platform uses `restframework_simplejwt` for user authentication and authorization.
+- Users can register as sellers or customers.
+- During registration:
+  - Customers are required to fill in necessary fields like name, address, etc.
+  - Sellers are required to create a shop by providing the shop name and address.
 
-- Some of the main features include:
-- User authentication and authorization.
-- Create, edit, and delete products, orders, shops.
-- Search bar to find products based on keywords
-- Pagination to view products.
-- Sorting options to order goods by rating, price.
-- Responsive design for web browser.
+### User Permissions and Restrictions
 
+- User actions are restricted based on their authentication status and role.
+- If a user is not authenticated, they will have limited access and won't be able to perform certain actions, such as:
+  - Adding items to the cart.
+  - Rating products.
+- Only authenticated users can add items to the cart, place orders, and provide ratings and reviews.
 
-### **Future Development**
-- AI chatbot assistant
-- Social sharing options for products and sellers/shops
-- Comments section for users to leave feedback
-- Advanced search capabilities with filtering options
+### Admin
 
+- As an admin, you have full control over the platform.
+- You can perform the following actions:
+  - Manage products: Add, edit, and delete products.
+  - Manage sellers: Add, edit, and delete seller accounts.
+  - Manage customers: View customer information and activity.
+  - Manage orders: View and process customer orders.
+  - Manage ratings: Monitor and moderate product ratings and reviews.
 
+### Seller
 
+- As a seller, you can perform specific actions related to your products and orders.
+- You have the following capabilities:
+  - Add existing products to your own inventory.
+  - Set the quantity and price for your products.
+  - Manage your own product listings: Add, edit, and delete products.
+  - View and process orders placed by customers for your products.
 
-### **Installation**
- 
- To install and run 1market, follow these steps:
+### Customer
 
-#### For backend:
+- As a customer, you have access to various features to enhance your shopping experience.
+- You can:
+  - Search for products by name.
+  - Rate and review products.
+  - Add items to your cart by specifying the quantity.
+  - Place orders for items in your cart.
+  - Download your order details and invoices.
 
-1) Install Python: 1market project requires Python 3.6+ to be installed on your system. You can download Python from the official website (https://www.python.org/downloads/). Choose the version of Python that matches your operating system and follow the installation instructions.
+## Installation and Setup
 
-2) Install pip: pip is the package installer for Python. Once you have Python installed, you should have pip automatically installed. You can check if pip is installed by running the following command in your terminal or command prompt: pip --version. If pip is not installed, you can install it by following the instructions on the official website (https://pip.pypa.io/en/stable/installing/).
+To get the project up and running on your local machine, follow these steps:
 
-3) Create and activate a virtual environment: It's a good practice to create a virtual environment for each project to avoid conflicts with other packages on your system. Navigate to the root directory of the project and run the following commands to create and activate a virtual environment:
+1. Clone the repository from GitHub.
+2. Set up the Django (backend) part:
+   - Navigate to the backend directory.
+   - Install the required Python dependencies using `pip install -r requirements.txt`.
+   - Configure the database settings in the `settings.py` file.
+   - Run database migrations using `python manage.py migrate`.
+   - Start the Django development server with `python manage.py runserver`.
+3. Set up the Angular (frontend) part:
+   - Navigate to the frontend directory.
+   - Install the required Node.js dependencies using `npm install`.
+   - Configure the API endpoint in the `environment.ts` file.
+   - Start the Angular development server with `ng serve`.
+4. Access the platform in your web browser at `http://localhost:4200`.
 
-On macOS and Linux:
+## Contributing
 
-bash
-Copy code
-python3 -m venv env
-source env/bin/activate
-On Windows:
+If you wish to contribute to this project, please follow these guidelines:
 
-bash
-Copy code
-python -m venv env
-env\Scripts\activate.bat
-Install Django: Once you have activated the virtual environment, you can install Django by running the following command in your terminal or command prompt: pip install Django. This will download and install the latest stable version of Django.
+1. Fork the repository and create a new branch for your feature or bug fix.
+2. Make your changes and ensure they are properly tested.
+3. Commit your changes with descriptive commit messages.
+4. Push your branch to your forked repository.
+5. Open a pull request, explaining the purpose and changes made.
 
-4) Clone the repository: Clone the 1market repository to your local machine using Git or download the zip file and extract it to a local directory.
+## Acknowledgements
 
-5) Migrate the database: Navigate to the root directory of the project and run the following command to apply any pending database migrations: python manage.py migrate.
+-
 
-6) Create a superuser (optional): If you want to access the Django admin panel, you'll need to create a superuser. Run the following command and follow the prompts: python manage.py createsuperuser.
-
-7) Run the development server: Finally, start the development server by running the following command: python manage.py runserver. You should see a message indicating that the server is running. Open a web browser and navigate to http://localhost:8000 to view the project.
-
-8) That's it for back side! You should now have 1market installed and running on your local machine with a virtual environment. If you encounter any issues during the installation process, please refer to the Django documentation.
-
-
-
-####For frontend:
-
-To install and run angular, follow these steps:
-
-1) Install Node.js: MyAngularProject requires Node.js to be installed on your system. You can download Node.js from the official website (https://nodejs.org/en/download/). Choose the version of Node.js that matches your operating system and follow the installation instructions.
-
-2) Install the Angular CLI: Once you have Node.js installed, you can install the Angular CLI by running the following command in your terminal or command prompt: npm install -g @angular/cli. This will download and install the latest version of the Angular CLI globally.
-
-3) Clone the repository if you didn't clone: Clone the MyAngularProject repository to your local machine using Git or download the zip file and extract it to a local directory.
-
-4) Install project dependencies: Navigate to the root directory of the project and run the following command to install the project dependencies listed in the package.json file: npm install.
-
-5) Run the development server: Finally, start the development server by running the following command: ng serve. You should see a message indicating that the server is running. Open a web browser and navigate to http://localhost:4200 to view the project.
-
-That's it! You should now have 1Market installed and running on your local machine. If you encounter any issues during the installation process, please refer to the Angular documentation.
-
-
-
-
-
+ [Django](https://www.djangoproject.com/)
+- [Angular](https://angular.io/)
+- [restframework_simplejwt](https://django-rest-framework-simplejwt.readthedocs.io/)
