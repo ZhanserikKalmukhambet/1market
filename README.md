@@ -46,6 +46,9 @@ This is an e-commerce platform built with Django (backend) and Angular (frontend
   - Set the quantity and price for your products.
   - Manage your own product listings: Add, edit, and delete products.
   - View and process orders placed by customers for your products.
+  
+  ![Flashback - май 20, 2023 13_17_43](https://github.com/Manapaly/1market/assets/94050043/c76efcc3-eaa2-4dd6-bc36-ada6350634ec)
+
 
 ### Customer
 
