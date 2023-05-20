@@ -59,6 +59,9 @@ This is an e-commerce platform built with Django (backend) and Angular (frontend
   - Add items to your cart by specifying the quantity.
   - Place orders for items in your cart.
   - Download your order details and invoices.
+  
+ ![Flashback - май 20, 2023 14_31_21](https://github.com/Manapaly/1market/assets/94050043/2eacd7f3-e083-43f8-a599-84c918f0f7d2)
+
 
 ## Installation and Setup
 
